@@ -11,8 +11,16 @@ export default StyleSheet.create({
     borderWidth: BORDER_WIDTH,
     borderColor: CLR_DIVIDER,
   },
+  containerBig: {
+    width: 65,
+    height: 65,
+  },
   logo: {
     width: 30,
     height: 30,
+  },
+  logoBig: {
+    width: 40,
+    height: 40,
   },
 })

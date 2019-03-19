@@ -22,7 +22,7 @@ const TableRowOrder = ({
   return (
     <TableRowBase
       {...props}
-      imageView={<StoreLogo uri={photo}/>}
+      imageView={<StoreLogo uri={photo} size="big"/>}
     >
       <View style={$.container}>
         <Text style={$.title}>{name}</Text>

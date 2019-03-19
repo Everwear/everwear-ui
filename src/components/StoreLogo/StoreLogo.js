@@ -1,14 +1,24 @@
 import React from 'react'
 import { View } from 'react-native'
 import RemoteImage from '../RemoteImage/RemoteImage'
+import { cn } from '../../common/utils'
 import $ from './StoreLogoStyles'
 
 const StoreLogo = ({
   uri,
+  size,
 }) => (
-  <View style={$.container}>
+  <View
+    style={cn($, {
+      container: true,
+      containerBig: size === 'big',
+    })}
+  >
     <RemoteImage
-      style={$.logo}
+      style={cn($, {
+        logo: true,
+        logoBig: size === 'big',
+      })}
       resizeMode="contain"
       source={{ uri }}
     />

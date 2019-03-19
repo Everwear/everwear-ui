@@ -19,7 +19,7 @@ export default StyleSheet.create({
     letterSpacing: 0.5,
     color: '#8c90a0',
   },
-  statusActive: {
+  statusAuthorized: {
     color: '#0ebb89',
   },
   statusProcessing: {

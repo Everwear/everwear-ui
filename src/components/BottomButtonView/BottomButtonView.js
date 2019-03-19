@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import DeviceInfo from 'react-native-device-info'
 import Button from '../Button/Button'
 import $ from './BottomButtonViewStyles'
@@ -38,28 +39,34 @@ class BottomButtonView extends Component {
       ...props
     } = this.props
 
-    let scrollView = (
-      <ScrollView
-        {...props}
-        ref={(ref) => this.scrollView = ref}
-        contentContainerStyle={[$.bodyContent, style]}
-        testID={testIDScrollView}
-        style={$.body}
-      >
-        {children}
-      </ScrollView>
-    )
+    let scrollView
 
     if (avoidKeyboardScrollView) {
       scrollView = (
-        <KeyboardAvoidingView
-          behavior="padding"
-          keyboardVerticalOffset={KEYBOARD_OFFSET}
-          style={$.kbaView}
-          enabled={true}
+        <KeyboardAwareScrollView
+          {...props}
+          enableOnAndroid={true}
+          extraScrollHeight={100}
+          testID={testIDScrollView}
+          ref={(ref) => this.scrollView = ref}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={[$.bodyContent, style]}
+          style={$.body}
         >
-          {scrollView}
-        </KeyboardAvoidingView>
+          {children}
+        </KeyboardAwareScrollView>
+      )
+    } else {
+      scrollView = (
+        <ScrollView
+          {...props}
+          ref={(ref) => this.scrollView = ref}
+          contentContainerStyle={[$.bodyContent, style]}
+          testID={testIDScrollView}
+          style={$.body}
+        >
+          {children}
+        </ScrollView>
       )
     }
 
