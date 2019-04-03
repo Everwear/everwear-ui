@@ -5,11 +5,11 @@ import $ from './TableRowStyles'
 
 const TableRow = ({
   text,
-  textStyles,
+  textStyle,
   textValue,
-  textValueStyles,
+  textValueStyle,
   textCaption,
-  textCaptionStyles,
+  textCaptionStyle,
   children,
   ...props
 }) => (
@@ -17,12 +17,12 @@ const TableRow = ({
     <View style={$.container}>
       {text &&
         <View style={$.row}>
-          <Text style={[$.text, textStyles]}>{text}</Text>
-          <Text style={[$.textValue, textValueStyles]}>{textValue}</Text>
+          <Text style={[$.text, textStyle]}>{text}</Text>
+          <Text style={[$.textValue, textValueStyle]}>{textValue}</Text>
         </View>}
       {textCaption &&
         <View style={$.row}>
-          <Text style={[$.textCaption, textCaptionStyles]}>{textCaption}</Text>
+          <Text style={[$.textCaption, textCaptionStyle]}>{textCaption}</Text>
         </View>}
     </View>
     {children}

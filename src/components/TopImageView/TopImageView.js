@@ -7,6 +7,7 @@ export default ({
   text,
   testIDText,
   testIDTitle,
+  style,
   title,
   image,
   imageStyle,
@@ -30,13 +31,13 @@ export default ({
   }
 
   return (
-    <View style={$.container}>
+    <View style={[$.container, style]}>
       {img}
-      {title &&
+      {!!title &&
         <Text testID={testIDTitle} style={$.title}>
           {title}
         </Text>}
-      {text &&
+      {!!text &&
         <Text testID={testIDText} style={$.text}>
           {text}
         </Text>}

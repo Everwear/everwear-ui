@@ -12,6 +12,7 @@ export default StyleSheet.create({
   },
   label: {
     lineHeight: 48,
+    letterSpacing: 0.5,
     fontWeight: '700',
     fontSize: 14,
     color: '#fff',
