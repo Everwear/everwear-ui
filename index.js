@@ -10,9 +10,10 @@ import TableRowOrderItemCheckbox from './src/components/TableRow/TableRowOrderIt
 import TableRowArrow from './src/components/TableRow/TableRowArrow'
 import TableRowStore from './src/components/TableRow/TableRowStore'
 import TableRowProfile from './src/components/TableRow/TableRowProfile'
+import TextField from './src/components/TextField/TextField'
 import RemoteImage from './src/components/RemoteImage/RemoteImage'
 import StoreLogo from './src/components/StoreLogo/StoreLogo'
-import SegmentedTab from './src/components/SegmentedTab/SegmentedTab'
+// import SegmentedTab from './src/components/SegmentedTab/SegmentedTab'
 import Seporator from './src/components/Seporator/Seporator'
 import BottomButtonView from './src/components/BottomButtonView/BottomButtonView'
 import TopImageView from './src/components/TopImageView/TopImageView'
@@ -28,6 +29,9 @@ import ModalAlert from './src/components/Modal/ModalAlert'
 import ModalAlertBase from './src/components/Modal/ModalAlertBase'
 import ModalTextField from './src/components/Modal/ModalTextField'
 import ModalTextFieldBase from './src/components/Modal/ModalTextFieldBase'
+
+import Alert from './src/hoc/Alert/Alert'
+import { AlertProvider } from './src/hoc/Alert/AlertProvider'
 
 import * as utils from './src/common/utils'
 import * as typography from './src/common/typography'
@@ -49,9 +53,10 @@ module.exports = extend({
   TableRowStore,
   TableRowProfile,
   TopImageView,
+  TextField,
   RemoteImage,
   StoreLogo,
-  SegmentedTab,
+  // SegmentedTab,
   SpinnerView,
   Seporator,
   ModalBase,
@@ -65,6 +70,11 @@ module.exports = extend({
   ModalAlertBase,
   ModalTextField,
   ModalTextFieldBase,
+
+  HOC: {
+    Alert,
+    AlertProvider,
+  },
 },
   utils,
   typography,
