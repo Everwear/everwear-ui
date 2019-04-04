@@ -11,6 +11,7 @@ import TableRowArrow from './src/components/TableRow/TableRowArrow'
 import TableRowStore from './src/components/TableRow/TableRowStore'
 import TableRowProfile from './src/components/TableRow/TableRowProfile'
 import TextField from './src/components/TextField/TextField'
+import TextFieldAddress from './src/components/TextFieldAddress/TextFieldAddress'
 import RemoteImage from './src/components/RemoteImage/RemoteImage'
 import StoreLogo from './src/components/StoreLogo/StoreLogo'
 // import SegmentedTab from './src/components/SegmentedTab/SegmentedTab'
@@ -54,6 +55,7 @@ module.exports = extend({
   TableRowProfile,
   TopImageView,
   TextField,
+  TextFieldAddress,
   RemoteImage,
   StoreLogo,
   // SegmentedTab,

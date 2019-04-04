@@ -22,4 +22,7 @@ export default StyleSheet.create({
     fontWeight: '600',
     fontSize: 16,
   },
+  image: {
+    resizeMode: 'contain',
+  },
 })
