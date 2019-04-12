@@ -10,10 +10,9 @@ export default StyleSheet.create({
     marginTop: 0,
   },
   content: {
-    marginLeft: 20,
-    paddingRight: 20,
     flexDirection: 'row',
     alignItems: 'flex-start',
+    marginHorizontal: 20,
   },
   contentTopSep: {
     borderTopColor: CLR_DIVIDER,
@@ -25,18 +24,26 @@ export default StyleSheet.create({
   },
   image: {
     marginRight: 15,
-    marginVertical: 15,
+    marginVertical: 12,
   },
   imageView: {
     marginRight: 15,
-    marginVertical: 15,
+    marginVertical: 12,
   },
   wrap: {
     flex: 1,
     flexWrap: 'wrap',
     flexDirection: 'row',
     alignItems: 'flex-start',
-    paddingVertical: 15,
+    paddingVertical: 12,
     height: '100%',
+  },
+  wrapTopSep: {
+    borderTopColor: CLR_DIVIDER,
+    borderTopWidth: BORDER_WIDTH,
+  },
+  wrapBottomSep: {
+    borderBottomColor: CLR_DIVIDER,
+    borderBottomWidth: BORDER_WIDTH,
   },
 })

@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native'
+import { TEXT_FOOTNOTE } from '../../common/typography'
 
 export default StyleSheet.create({
   container: {
-    marginBottom: 20,
+    marginBottom: 16,
     alignSelf: 'center',
   },
   inputWrap: {
@@ -10,22 +11,20 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomWidth: 1,
-    borderColor: '#8c90a0',
-    zIndex: 5,
+    borderBottomColor: '#e1e2e8',
+  },
+  inputWrapFocus: {
+    borderBottomColor: '#4c73ff',
   },
   input: {
     flex: 1,
-    backgroundColor: '#fff',
-    height: 36,
-    fontSize: 18,
-    color: '#24253d',
+    height: 43,
+    fontSize: 16,
+    fontFamily: 'WorkSans-Regular',
+    color: '#100a50',
   },
   hint: {
-    marginTop: 3,
-    fontSize: 12,
-    color: '#8c90a0',
+    ...TEXT_FOOTNOTE,
+    marginTop: 8,
   },
-  focused: {
-    borderColor: '#24253d',
-  }
 })

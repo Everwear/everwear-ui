@@ -16,6 +16,7 @@ const TableRowBase = ({
   imageIsLoading,
   noTopSep,
   noBottomSep,
+  fullWidthSep,
   onPress,
   children,
   testID,
@@ -33,8 +34,8 @@ const TableRowBase = ({
     <View
       style={cn($, {
         'content': true,
-        'contentTopSep': !first && !(noTopSep === true),
-        'contentBottomSep': !last && !(noBottomSep === true),
+        'contentTopSep': fullWidthSep && !first && !(noTopSep === true),
+        'contentBottomSep': fullWidthSep && !last && !(noBottomSep === true),
       })}
     >
       {imageIsLoading &&
@@ -53,7 +54,13 @@ const TableRowBase = ({
         <View style={[$.imageView, imageViewStyle]}>
           {imageView}
         </View>}
-      <View style={$.wrap}>
+      <View
+        style={cn($, {
+          'wrap': true,
+          'wrapTopSep': !fullWidthSep && !first && !(noTopSep === true),
+          'wrapBottomSep': !fullWidthSep && !last && !(noBottomSep === true),
+        })}
+      >
         {children}
       </View>
     </View>

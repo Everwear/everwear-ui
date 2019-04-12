@@ -1,23 +1,27 @@
 import { StyleSheet } from 'react-native'
-import { TEXT_BASE } from '../../common/typography'
+import {
+  TEXT_BASE,
+  TEXT_SECONDARY,
+} from '../../common/typography'
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  text: {
+  store: {
     ...TEXT_BASE,
     color: '#100a50',
   },
-  textValue: {
+  amount: {
     ...TEXT_BASE,
+    color: '#19d87c',
   },
-  textLabel: {
-    ...TEXT_BASE,
+  text: {
+    ...TEXT_SECONDARY,
   },
 })

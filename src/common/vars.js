@@ -26,7 +26,7 @@ export const CLR_TEXT_CORAL = '#ff8c98'
 export const CLR_TEXT_DISABLED = '#ccc'
 export const CLR_SCREEN_BG = '#f7f9fa'
 
-export const FONT_FAMILY = Platform.OS === 'sketch' ? 'SF Pro Text' : Platform.OS === 'ios' ? 'System' : 'Roboto'
+export const FONT_FAMILY = Platform.OS === 'sketch' ? 'SF Pro Text' : Platform.OS === 'ios' ? 'System' : 'WorkSans'
 export const FONT_SIZE_H1 = 34
 export const FONT_SIZE_H2 = 28
 export const FONT_SIZE_H3 = 20

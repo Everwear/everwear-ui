@@ -2,16 +2,16 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
   container: {
-    height: 48,
+    height: 32,
     paddingHorizontal: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#100a50',
+    backgroundColor: '#f5f4fa',
     borderRadius: 24,
   },
   label: {
-    lineHeight: 48,
-    color: '#f9cec6',
+    lineHeight: 32,
+    color: '#4c73ff',
     fontFamily: 'WorkSans-SemiBold',
     fontSize: 16,
   },

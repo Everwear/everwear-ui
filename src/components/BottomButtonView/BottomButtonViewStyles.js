@@ -11,18 +11,11 @@ export default StyleSheet.create({
     paddingBottom: 20,
   },
   buttonWrap: {
-    backgroundColor: '#fff',
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 3,
-    shadowOffset: {
-      height: -3,
-      width: 0,
-    },
+    alignItems: 'center',
   },
   button: {
-    marginVertical: 10,
-    marginHorizontal: 20,
+    marginBottom: 16,
+    width: 195,
   },
   kbaView: {
     flex: 1,

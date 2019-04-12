@@ -1,46 +1,64 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import RemoteImage from '../RemoteImage/RemoteImage'
+import ButtonSmall from '../Button/ButtonSmall'
 import TableRowBase from './TableRowBase'
 import { cn } from '../../common/utils'
 import $ from './TableRowOrderItemStyles'
 
 const TableRowOrderItem = ({
+  item,
   order,
-  product,
+  onReturn,
+  onActions,
   ...props
 }) => {
-  const isReturned = product.status.name === 'Returned'
-  const isScheduledOrCompleted = [
-    'Expecting The Return',
-    'Scheduled Return',
-    'Complete',
-  ].includes(order.status.name)
+  const orderStatus = order.status.name
+  const itemStatus = item.status.name
+
+  const isOrderReturnable = ['Expecting The Return', 'Delivered'].includes(orderStatus)
+  const isOrderComplete = ['Scheduled Return', 'Complete'].includes(orderStatus)
+  const isItemReturned = itemStatus === 'Returned'
 
   return (
     <TableRowBase
       {...props}
-      image={{ uri: product.photo }}
-      imageStyle={$.image}
+      fullWidthSep={true}
+      imageView={
+        <View style={$.imageWrap}>
+          <View style={$.imageOverlay}/>
+          <RemoteImage
+            style={$.image}
+            resizeMode="cover"
+            source={{
+              uri: item.photo,
+            }}
+          />
+        </View>
+      }
     >
       <View style={$.container}>
+        <Text style={$.title}>{item.name}</Text>
+        <Text style={$.size}>Size: {item.size}</Text>
         <View style={$.row}>
-          <Text style={$.title}>{product.name}</Text>
-          <Text style={$.price}>${product.price}</Text>
+          <Text style={$.price}>${item.price}</Text>
+          {isOrderComplete &&
+            <Text style={$.status}>
+              {item.status.name}
+            </Text>}
+          {itemStatus === 'Returned' &&
+            <Text style={[$.status, $.statusReturned]}>
+              Returned
+            </Text>}
+          {isOrderReturnable && !isItemReturned &&
+            <ButtonSmall onPress={onReturn}>
+              Return
+            </ButtonSmall>}
+          {isOrderReturnable && isItemReturned &&
+            <ButtonSmall onPress={onActions}>
+              ...
+            </ButtonSmall>}
         </View>
-        <View style={$.row}>
-          <Text style={$.tags}>{product.size}</Text>
-        </View>
-        {isScheduledOrCompleted &&
-          <View style={$.row}>
-            <Text
-              style={cn($, {
-                status: true,
-                statusReturned: isReturned,
-              })}
-            >
-              {order.status.name}
-            </Text>
-          </View>}
       </View>
     </TableRowBase>
   )

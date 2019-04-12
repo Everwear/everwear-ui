@@ -1,8 +1,6 @@
 import { StyleSheet } from 'react-native'
-import {
-  CLR_DIVIDER,
-  BORDER_WIDTH,
-} from '../../common/vars'
+import { CLR_DIVIDER, BORDER_WIDTH } from '../../common/vars'
+import { TEXT_BASE } from '../../common/typography'
 
 export default StyleSheet.create({
   container: {
@@ -17,24 +15,17 @@ export default StyleSheet.create({
   list: {
     position: 'absolute',
     left: 0,
-    top: '100%',
     right: 0,
+    top: '100%',
     backgroundColor: '#fff',
-    shadowColor: '#000',
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    shadowOffset: {
-      height: 8,
-    },
   },
   listItem: {
     paddingVertical: 10,
-    paddingHorizontal: 20,
     borderTopColor: CLR_DIVIDER,
     borderTopWidth: BORDER_WIDTH,
   },
   listItemText: {
-    fontSize: 18,
-    color: '#000',
+    ...TEXT_BASE,
+    color: '#717486',
   },
 })

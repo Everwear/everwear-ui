@@ -1,27 +1,24 @@
 import { StyleSheet } from 'react-native'
+import {
+  TEXT_BASE,
+  TEXT_FOOTNOTE,
+} from '../../common/typography'
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-    alignSelf: 'center',
+  logo: {
+    marginVertical: 12,
   },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  content: {
+    marginVertical: 12,
   },
   title: {
+    ...TEXT_BASE,
     marginBottom: 4,
-    color: '#24253d',
-    lineHeight: 20,
-    fontWeight: '700',
-    fontSize: 16,
+    marginRight: 16,
+    color: '#100a50',
   },
   status: {
-    fontSize: 12,
-    fontWeight: '700',
-    lineHeight: 16,
-    letterSpacing: 0.5,
-    color: '#24253d',
+    ...TEXT_FOOTNOTE,
   },
   statusActive: {
     color: '#0ebb89',
@@ -29,27 +26,33 @@ export default StyleSheet.create({
   statusFailed: {
     color: '#da1856',
   },
-  tags: {
-    fontSize: 12,
-    fontWeight: '600',
-    lineHeight: 16,
-    letterSpacing: 0.5,
-    color: '#8c90a0',
-  },
-  price: {
-    fontSize: 12,
-    fontWeight: '700',
-    lineHeight: 16,
-    letterSpacing: 0.5,
-    color: '#8c90a0',
+  arrow: {
+    position: 'absolute',
+    top: 27,
+    right: 0,
+    height: 13,
+    width: 8,
   },
   images: {
     flexDirection: 'row',
-    marginTop: 15,
+    marginTop: 16,
+  },
+  imageWrap: {
+    width: 40,
+    height: 60,
+    marginRight: 4,
+  },
+  imageOverlay: {
+    zIndex: 10,
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0,0,0,0.05)',
   },
   image: {
-    width: 60,
-    height: 77,
-    marginRight: 4,
+    width: 40,
+    height: 60,
   },
 })

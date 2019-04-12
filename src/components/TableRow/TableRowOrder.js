@@ -1,8 +1,8 @@
 import React from 'react'
-import moment from 'moment'
-import { View, Text } from 'react-native'
-import TableRowBase from './TableRowBase'
+import { View, Text, Image } from 'react-native'
+import RemoteImage from '../RemoteImage/RemoteImage'
 import StoreLogo from '../StoreLogo/StoreLogo'
+import TableRowBase from './TableRowBase'
 import { cn } from '../../common/utils'
 import $ from './TableRowOrderStyles'
 
@@ -21,29 +21,52 @@ const TableRowOrder = ({
   return (
     <TableRowBase
       {...props}
-      imageView={<StoreLogo uri={order.store.photo}/>}
+      fullWidthSep={true}
+      imageView={
+        <StoreLogo
+          style={$.logo}
+          uri={order.store.photo}
+        />
+      }
     >
-      <View style={$.container}>
-        <View style={$.row}>
-          <Text style={$.title}>
-            {order.details.length}{' '}
-            {order.details.length === 1 ? 'item' : 'items'}
-          </Text>
-          <Text
-            style={cn($, {
-              status: true,
-              statusActive: isActive,
-              statusFailed: isFailed,
-            })}
-          >
-            {order.status.name}
-          </Text>
+      <Image
+        source={require('./img/arrow.png')}
+        style={$.arrow}
+      />
+      <View style={$.content}>
+        <Text
+          style={$.title}
+          ellipsizeMode="tail"
+          numberOfLines={2}
+        >
+          {order.details.map(d => d.name).join(', ')}
+        </Text>
+        <Text
+          style={cn($, {
+            status: true,
+            statusActive: isActive,
+            statusFailed: isFailed,
+          })}
+        >
+          {order.status.name}
+        </Text>
+        <View style={$.images}>
+          {order.details.map((product) => (
+            <View
+              key={product.id}
+              style={$.imageWrap}
+            >
+              <View style={$.imageOverlay}/>
+              <RemoteImage
+                style={$.image}
+                resizeMode="cover"
+                source={{
+                  uri: product.photo,
+                }}
+              />
+            </View>
+          ))}
         </View>
-        <View style={$.row}>
-          <Text style={$.tags}>{moment(order.date).format('MMM D, YYYY')} • {order.store.name}</Text>
-          <Text style={$.price}>${order.price}</Text>
-        </View>
-        {children}
       </View>
     </TableRowBase>
   )

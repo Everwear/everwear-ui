@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { TextInput, View, Text } from 'react-native'
+import { cn } from '../../common/utils'
 import $ from './TextFieldStyles'
 
 class TextField extends Component {
@@ -27,12 +28,18 @@ class TextField extends Component {
 
     return (
       <View style={[$.container, style]}>
-        <View style={[$.inputWrap, focused && $.focused]}>
+        <View
+          style={cn($, {
+            'inputWrap': true,
+            'inputWrapFocus': focused,
+          })}
+        >
           <TextInput
             {...this.props}
             testID={testID}
             onBlur={this.toggleFocus}
             onFocus={this.toggleFocus}
+            placeholderTextColor="#8d90a1"
             style={$.input}
             value={value}
           />

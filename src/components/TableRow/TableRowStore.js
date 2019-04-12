@@ -2,10 +2,10 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import TableRowBase from './TableRowBase'
 import StoreLogo from '../StoreLogo/StoreLogo'
-import { cn } from '../../common/utils'
+import ButtonSmall from '../Button/ButtonSmall'
 import $ from './TableRowStoreStyles'
 
-const TableRowOrder = ({
+const TableRowStore = ({
   store,
   ...props
 }) => {
@@ -13,11 +13,7 @@ const TableRowOrder = ({
     name,
     photo,
     status,
-    website
   } = store
-
-  const isProcessing = status === 'Processing'
-  const isAuthorized = status === 'Authorized'
 
   return (
     <TableRowBase
@@ -26,19 +22,16 @@ const TableRowOrder = ({
     >
       <View style={$.container}>
         <Text style={$.title}>{name}</Text>
-        <Text
-          style={cn($, {
-            status: true,
-            statusAuthorized: isAuthorized,
-            statusProcessing: isProcessing,
-          })}
-        >
-          {!!status || website}
-          {!!status && (isProcessing ? 'Pending Authorization' : status)}
-        </Text>
+        {status === 'Authorised' &&
+          <Text style={$.authorised}>
+            Authorised
+          </Text>}
       </View>
+      <ButtonSmall style={$.add}>
+        Add
+      </ButtonSmall>
     </TableRowBase>
   )
 }
 
-export default TableRowOrder
+export default TableRowStore

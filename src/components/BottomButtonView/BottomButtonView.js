@@ -29,6 +29,7 @@ class BottomButtonView extends Component {
       buttonText,
       buttonOnPress,
       buttonLoading,
+      refreshControl,
       buttonVisibile = true,
       avoidKeyboardScrollView,
       avoidKeyboard,
@@ -62,6 +63,7 @@ class BottomButtonView extends Component {
           {...props}
           ref={(ref) => this.scrollView = ref}
           contentContainerStyle={[$.bodyContent, style]}
+          refreshControl={refreshControl}
           testID={testIDScrollView}
           style={$.body}
         >
@@ -98,7 +100,7 @@ class BottomButtonView extends Component {
           behavior="padding"
           keyboardVerticalOffset={KEYBOARD_OFFSET}
           style={$.kbaView}
-          enabled
+          enabled={true}
         >
           {component}
         </KeyboardAvoidingView>

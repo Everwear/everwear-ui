@@ -3,21 +3,21 @@ import { TEXT_BASE } from '../../common/typography'
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    alignSelf: 'flex-start',
-  },
-  row: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    marginBottom: 16,
+  },
+  containerLast: {
+    marginBottom: 0,
+  },
+  dot: {
+    width: 7,
+    height: 7,
+    marginTop: 7,
+    marginRight: 14,
+    backgroundColor: '#f9cec6',
+    borderRadius: 4,
   },
   text: {
-    ...TEXT_BASE,
-    color: '#100a50',
-  },
-  textValue: {
-    ...TEXT_BASE,
-  },
-  textLabel: {
     ...TEXT_BASE,
   },
 })

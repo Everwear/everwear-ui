@@ -29,9 +29,11 @@ class Table extends Component {
           })}
         </View>
         {footer &&
-          <Text style={$.footer}>
-            {footer}
-          </Text>}
+          <View style={$.footerWrap}>
+            <Text style={$.footer}>
+              {footer}
+            </Text>
+          </View>}
       </View>
     )
   }

@@ -19,8 +19,25 @@ class AlertProvider extends Component {
       >
         {children}
         <DropdownAlert
-          ref={ref => this.dropdown = ref}
-          testID="alert"
+          ref={(ref) => {
+            this.dropdown = ref
+          }}
+          infoImageSrc={null}
+          warnImageSrc={null}
+          errorImageSrc={null}
+          successImageSrc={null}
+          titleStyle={{
+            textAlign: 'center',
+            fontFamily: 'WorkSans-Semibold',
+            fontSize: 14,
+            color: '#fff',
+          }}
+          messageStyle={{
+            textAlign: 'center',
+            fontFamily: 'WorkSans-Semibold',
+            fontSize: 14,
+            color: '#fff',
+          }}
         />
       </GlobalContext.Provider>
     )

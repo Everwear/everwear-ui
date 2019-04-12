@@ -1,6 +1,6 @@
 import React from 'react'
 import { cn } from '../../common/utils'
-import $ from './ButtonStyles'
+import $ from './ButtonSmallStyles'
 
 import {
   Text,
