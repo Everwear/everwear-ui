@@ -16,10 +16,10 @@ class TextField extends Component {
 
   render () {
     const {
-      style,
       hint,
-      value,
-      testID,
+      style,
+      forwardedRef,
+      ...props
     } = this.props
 
     const {
@@ -35,13 +35,12 @@ class TextField extends Component {
           })}
         >
           <TextInput
-            {...this.props}
-            testID={testID}
+            {...props}
+            ref={forwardedRef}
             onBlur={this.toggleFocus}
             onFocus={this.toggleFocus}
             placeholderTextColor="#8d90a1"
             style={$.input}
-            value={value}
           />
         </View>
         {hint &&
@@ -53,4 +52,11 @@ class TextField extends Component {
   }
 }
 
-export default TextField
+export default React.forwardRef((props, ref) => {
+  return (
+    <TextField
+      {...props}
+      forwardedRef={ref}
+    />
+  )
+})

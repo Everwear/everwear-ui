@@ -6,6 +6,7 @@ import $ from './ListItemStyles'
 const ListItem = ({
   last,
   first,
+  index,
   style,
   children,
 }) => (
@@ -16,7 +17,7 @@ const ListItem = ({
       'containerLast': last,
     }), style]}
   >
-    <View style={$.dot}/>
+    <Text style={$.num}>{index+1}</Text>
     <Text style={$.text}>
       {children}
     </Text>

@@ -7,6 +7,7 @@ export default StyleSheet.create({
     height: 62,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#fff',
     borderColor: CLR_DIVIDER,
     borderWidth: BORDER_WIDTH,
     borderRadius: 8,

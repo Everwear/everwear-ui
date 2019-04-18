@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableHighlight } from 'react-native'
 import TextField from '../TextField/TextField'
 import $ from './TextFieldAddressStyles'
 import debounce from 'lodash/debounce'
+
+import {
+  View,
+  Text,
+  TouchableHighlight,
+  Keyboard,
+} from 'react-native'
 
 const GOOGLE_MAPS_AUTOCOMPLETE_API_ENDPOINT = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?'
 const GOOGLE_MAPS_PLACES_API_ENDPOINT = 'https://maps.googleapis.com/maps/api/place/details/json?'
@@ -93,6 +99,7 @@ class TextFieldAddress extends Component {
               underlayColor="#dce0e3"
               onPress={() => {
                 requestAnimationFrame(() => {
+                  Keyboard.dismiss()
                   this.onSelect(item)
                 })
               }}

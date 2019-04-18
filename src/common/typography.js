@@ -34,6 +34,22 @@ export const TEXT_FOOTNOTE = {
 export const TEXT_H1 = {
   fontSize: 36,
   fontFamily: 'WorkSans-Regular',
-  lineHeight: 38,
+  letterSpacing: -0.4,
+  lineHeight: 40,
+  color: '#100a50',
+}
+
+export const TEXT_H2 = {
+  fontSize: 32,
+  fontFamily: 'WorkSans-Regular',
+  letterSpacing: -0.4,
+  lineHeight: 36,
+  color: '#100a50',
+}
+
+export const TEXT_H3 = {
+  fontSize: 20,
+  fontFamily: 'WorkSans-Regular',
+  lineHeight: 26,
   color: '#100a50',
 }

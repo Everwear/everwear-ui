@@ -8,16 +8,21 @@ export default StyleSheet.create({
   },
   title: {
     ...TEXT_BASE,
-    marginBottom: 4,
+    color: '#100a50',
   },
-  status: {
-    fontSize: 12,
-    fontWeight: '700',
-    lineHeight: 16,
-    letterSpacing: 0.5,
-    color: '#0ebb89',
+  authorized: {
+    marginTop: 2,
+    fontSize: 14,
+    fontWeight: '600',
+    fontFamily: 'WorkSans-SemiBold',
+    color: '#19d87c',
   },
   add: {
+    alignSelf: 'center',
+  },
+  arrow: {
+    width: 7,
+    height: 12,
     alignSelf: 'center',
   },
 })

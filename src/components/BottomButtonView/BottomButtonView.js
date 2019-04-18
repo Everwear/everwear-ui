@@ -7,7 +7,6 @@ import $ from './BottomButtonViewStyles'
 import {
   View,
   ScrollView,
-  SafeAreaView,
   KeyboardAvoidingView,
 } from 'react-native'
 
@@ -73,7 +72,7 @@ class BottomButtonView extends Component {
     }
 
     const component = (
-      <SafeAreaView style={$.container}>
+      <View style={$.container}>
         {scrollView}
         {buttonVisibile &&
           <View style={$.buttonWrap}>
@@ -91,7 +90,7 @@ class BottomButtonView extends Component {
               {buttonText}
             </Button>
           </View>}
-      </SafeAreaView>
+      </View>
     )
 
     if (avoidKeyboard) {

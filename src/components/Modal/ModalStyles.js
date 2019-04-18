@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native'
 import {
-  TEXT,
-  TEXT_CAPTION,
+  TEXT_BASE,
+  TEXT_BASE_BOLD,
+  TEXT_VIBRANT,
 } from '../../common/typography'
 
 import {
@@ -26,13 +27,13 @@ export default StyleSheet.create({
     resizeMode: 'contain',
   },
   text: {
-    ...TEXT,
+    ...TEXT_VIBRANT,
     textAlign: 'center',
     fontWeight: '600',
     color: '#000',
   },
   caption: {
-    ...TEXT_CAPTION,
+    ...TEXT_BASE,
     marginTop: SPG_XS,
     textAlign: 'center',
     color: '#000',
@@ -54,14 +55,13 @@ export default StyleSheet.create({
     borderRightWidth: BORDER_WIDTH,
   },
   buttonText: {
-    fontSize: 17,
+    ...TEXT_BASE,
     textAlign: 'center',
     color: '#087fff',
   },
   buttonTextBold: {
-    fontSize: 17,
+    ...TEXT_BASE_BOLD,
     textAlign: 'center',
-    fontWeight: '600',
     color: '#087fff',
   },
 })

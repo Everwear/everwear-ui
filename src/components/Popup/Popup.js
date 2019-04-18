@@ -22,7 +22,7 @@ class Popup extends Component {
 
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
-      onMoveShouldSetPanResponder: () => true,
+      // onMoveShouldSetPanResponder: () => true,
       onPanResponderMove: (e, gesture) => {
         pan.setValue({
           y: Math.max(gesture.dy, 0),

@@ -11,10 +11,13 @@ export default StyleSheet.create({
     paddingBottom: 20,
   },
   buttonWrap: {
+    position: 'absolute',
+    bottom: 36,
+    left: 0,
+    right: 0,
     alignItems: 'center',
   },
   button: {
-    marginBottom: 16,
     width: 195,
   },
   kbaView: {

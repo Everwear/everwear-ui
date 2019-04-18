@@ -18,6 +18,10 @@ const Alert = (WrappedComponent) => {
       context.alertWithType('error', title, error)
     }
 
+    showAlert = context => (message, title = '') => {
+      context.alertWithType('success', title, message)
+    }
+
     render () {
       return (
         <GlobalContext.Consumer>
@@ -25,6 +29,7 @@ const Alert = (WrappedComponent) => {
             <WrappedComponent
               showNetworkError={this.showNetworkError(context)}
               showError={this.showError(context)}
+              showAlert={this.showAlert(context)}
               {...this.props}
               {...context}
             />}

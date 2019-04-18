@@ -14,6 +14,12 @@ import TextField from './src/components/TextField/TextField'
 import TextFieldAddress from './src/components/TextFieldAddress/TextFieldAddress'
 import TextVibrate from './src/components/Text/TextVibrate'
 import TextBase from './src/components/Text/TextBase'
+import TextBaseCenter from './src/components/Text/TextBaseCenter'
+import TextH1 from './src/components/Text/TextH1'
+import TextH1Center from './src/components/Text/TextH1Center'
+import TextH2 from './src/components/Text/TextH2'
+import TextH2Center from './src/components/Text/TextH2Center'
+import TextH3 from './src/components/Text/TextH3'
 import RemoteImage from './src/components/RemoteImage/RemoteImage'
 import StoreLogo from './src/components/StoreLogo/StoreLogo'
 // import SegmentedTab from './src/components/SegmentedTab/SegmentedTab'
@@ -37,6 +43,7 @@ import List from './src/components/List/List'
 import ListItem from './src/components/List/ListItem'
 import ListItemOrdered from './src/components/List/ListItemOrdered'
 import Progress from './src/components/Progress/Progress'
+import Search from './src/components/Search/Search'
 import Link from './src/components/Link/Link'
 
 import Alert from './src/hoc/Alert/Alert'
@@ -66,6 +73,12 @@ module.exports = extend({
   TextFieldAddress,
   TextVibrate,
   TextBase,
+  TextBaseCenter,
+  TextH1,
+  TextH1Center,
+  TextH2,
+  TextH2Center,
+  TextH3,
   RemoteImage,
   StoreLogo,
   // SegmentedTab,
@@ -87,6 +100,7 @@ module.exports = extend({
   ListItem,
   ListItemOrdered,
   Progress,
+  Search,
   Link,
 
   HOC: {

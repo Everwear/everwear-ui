@@ -26,6 +26,7 @@ class AlertProvider extends Component {
           warnImageSrc={null}
           errorImageSrc={null}
           successImageSrc={null}
+          successColor="#19d87c"
           titleStyle={{
             textAlign: 'center',
             fontFamily: 'WorkSans-Semibold',

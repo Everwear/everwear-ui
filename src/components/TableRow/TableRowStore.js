@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import TableRowBase from './TableRowBase'
 import StoreLogo from '../StoreLogo/StoreLogo'
 import ButtonSmall from '../Button/ButtonSmall'
@@ -7,6 +7,7 @@ import $ from './TableRowStoreStyles'
 
 const TableRowStore = ({
   store,
+  onAdd,
   ...props
 }) => {
   const {
@@ -22,14 +23,23 @@ const TableRowStore = ({
     >
       <View style={$.container}>
         <Text style={$.title}>{name}</Text>
-        {status === 'Authorised' &&
-          <Text style={$.authorised}>
-            Authorised
+        {status === 'Authorized' &&
+          <Text style={$.authorized}>
+            Authorized
           </Text>}
       </View>
-      <ButtonSmall style={$.add}>
-        Add
-      </ButtonSmall>
+      {status !== 'Authorized' &&
+        <ButtonSmall
+          style={$.add}
+          onPress={onAdd}
+        >
+          Add
+        </ButtonSmall>}
+      {status === 'Authorized' &&
+        <Image
+          source={require('./img/arrow.png')}
+          style={$.arrow}
+        />}
     </TableRowBase>
   )
 }

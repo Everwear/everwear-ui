@@ -3,7 +3,6 @@ import { TEXT_FOOTNOTE } from '../../common/typography'
 
 export default StyleSheet.create({
   container: {
-    marginBottom: 16,
     alignSelf: 'center',
   },
   inputWrap: {
