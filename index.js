@@ -13,6 +13,7 @@ import TableRowGroup from './src/components/TableRow/TableRowGroup'
 import TextField from './src/components/TextField/TextField'
 import TextFieldAddress from './src/components/TextFieldAddress/TextFieldAddress'
 import TextVibrate from './src/components/Text/TextVibrate'
+import TextSecondary from './src/components/Text/TextSecondary'
 import TextBase from './src/components/Text/TextBase'
 import TextBaseCenter from './src/components/Text/TextBaseCenter'
 import TextH1 from './src/components/Text/TextH1'
@@ -72,6 +73,7 @@ module.exports = extend({
   TextField,
   TextFieldAddress,
   TextVibrate,
+  TextSecondary,
   TextBase,
   TextBaseCenter,
   TextH1,
