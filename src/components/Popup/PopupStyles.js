@@ -9,6 +9,7 @@ export default StyleSheet.create({
   modal: {
     width: '100%',
     alignItems: 'center',
+    zIndex: 2,
   },
   content: {
     width: '100%',
@@ -23,5 +24,13 @@ export default StyleSheet.create({
     marginBottom: 12,
     borderRadius: 3,
     backgroundColor: 'rgba(255,255,255,0.7)',
+  },
+  outside: {
+    position: 'absolute',
+    zIndex: 1,
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
 })

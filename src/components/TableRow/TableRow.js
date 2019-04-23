@@ -10,6 +10,8 @@ const TableRow = ({
   textValueStyle,
   textLabel,
   textLabelStyle,
+  textCaption,
+  textCaptionStyle,
   children,
   ...props
 }) => (
@@ -24,6 +26,10 @@ const TableRow = ({
           <Text style={[$.text, textStyle]}>{text}</Text>
           <Text style={[$.textValue, textValueStyle]}>{textValue}</Text>
         </View>}
+      {!!textCaption &&
+        <Text style={[$.textCaption, textCaptionStyle]}>
+          {textCaption}
+        </Text>}
     </View>
     {children}
   </TableRowBase>

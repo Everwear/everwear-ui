@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import $ from './TableStyles'
 
 class Table extends Component {
@@ -8,14 +8,14 @@ class Table extends Component {
       style,
       header,
       footer,
+      onPress,
       children,
     } = this.props
 
     const elements = React.Children.toArray(children)
     const last = elements.length - 1
-
-    return (
-      <View style={[$.container, style]}>
+    const content = (
+      <>
         {header &&
           <Text style={$.header}>
             {header}
@@ -34,6 +34,20 @@ class Table extends Component {
               {footer}
             </Text>
           </View>}
+      </>
+    )
+
+    if (onPress) {
+      return (
+        <TouchableOpacity style={[$.container, style]}>
+          {content}
+        </TouchableOpacity>
+      )
+    }
+
+    return (
+      <View style={[$.container, style]}>
+        {content}
       </View>
     )
   }

@@ -2,8 +2,9 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
   container: {
+    width: '100%',
     flexDirection: 'row',
-    marginBottom: 40,
+    marginBottom: 28,
   },
   containerLast: {
     marginBottom: 0,
@@ -19,8 +20,8 @@ export default StyleSheet.create({
   text: {
     fontSize: 20,
     fontFamily: 'WorkSans-Regular',
-    lineHeight: 26,
     letterSpacing: -0.1,
+    lineHeight: 26,
     color: '#717486',
   },
 })

@@ -12,6 +12,7 @@ import TableRowOperation from './src/components/TableRow/TableRowOperation'
 import TableRowGroup from './src/components/TableRow/TableRowGroup'
 import TextField from './src/components/TextField/TextField'
 import TextFieldAddress from './src/components/TextFieldAddress/TextFieldAddress'
+import CreditCardField from './src/components/CreditCardField/CreditCardField'
 import TextVibrate from './src/components/Text/TextVibrate'
 import TextSecondary from './src/components/Text/TextSecondary'
 import TextBase from './src/components/Text/TextBase'
@@ -60,6 +61,7 @@ module.exports = extend({
   Button,
   ButtonSmall,
   BottomButtonView,
+  CreditCardField,
   Table,
   TableRow,
   TableRowBase,

@@ -3,6 +3,7 @@ import {
   View,
   Modal,
   PanResponder,
+  TouchableWithoutFeedback,
   Animated,
 } from 'react-native'
 
@@ -18,7 +19,6 @@ class Popup extends Component {
 
   componentWillMount() {
     const { pan } = this.state
-    const { onClose } = this.props
 
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -31,14 +31,7 @@ class Popup extends Component {
       },
       onPanResponderRelease: (e, gesture) => {
         if (gesture.dy > 100) {
-          Animated.spring(pan, {
-            // useNativeDriver: true,
-            toValue: { x: 0, y: 300 },
-            overshootClamping: true,
-            speed: 30,
-          }).start(() => {
-            onClose()
-          })
+          this.close()
         } else {
           Animated.spring(pan, {
             // useNativeDriver: true,
@@ -62,9 +55,22 @@ class Popup extends Component {
     }).start()
   }
 
+  close = () => {
+    const { pan } = this.state
+    const { onClose } = this.props
+
+    Animated.spring(pan, {
+      // useNativeDriver: true,
+      toValue: { x: 0, y: 300 },
+      overshootClamping: true,
+      speed: 30,
+    }).start(() => {
+      onClose()
+    })
+  }
+
   render() {
     const {
-      onClose,
       children,
       ...props
     } = this.props
@@ -74,7 +80,7 @@ class Popup extends Component {
     return (
       <Modal
         transparent={true}
-        onRequestClose={onClose}
+        onRequestClose={this.close}
         {...props}
       >
         <Animated.View
@@ -85,6 +91,9 @@ class Popup extends Component {
             })
           }]}
         >
+          <TouchableWithoutFeedback onPress={this.close}>
+            <View style={$.outside}/>
+          </TouchableWithoutFeedback>
           <Animated.View
             {...this.panResponder.panHandlers}
             style={[$.modal, {

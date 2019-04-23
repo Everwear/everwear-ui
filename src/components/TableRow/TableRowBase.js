@@ -20,17 +20,8 @@ const TableRowBase = ({
   onPress,
   children,
   testID,
-}) => (
-  <TouchableHighlight
-    testID={testID}
-    style={[cn($, {
-      'container': true,
-      'containerFirst': first,
-      'containerLast': last,
-    }), style]}
-    underlayColor="#dce0e3"
-    onPress={onPress}
-  >
+}) => {
+  const content = (
     <View
       style={cn($, {
         'content': true,
@@ -64,8 +55,35 @@ const TableRowBase = ({
         {children}
       </View>
     </View>
-  </TouchableHighlight>
-)
+  )
+
+  const props = {
+    testID,
+    style: [cn($, {
+      'container': true,
+      'containerFirst': first,
+      'containerLast': last,
+    }), style],
+  }
+
+  if (onPress) {
+    return (
+      <TouchableHighlight
+        {...props}
+        underlayColor="#dce0e3"
+        onPress={onPress}
+      >
+        {content}
+      </TouchableHighlight>
+    )
+  }
+
+  return (
+    <View {...props}>
+      {content}
+    </View>
+  )
+}
 
 TableRowBase.propTypes = {
   last: PropTypes.bool,

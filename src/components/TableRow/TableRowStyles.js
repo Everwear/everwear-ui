@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native'
-import { TEXT_BASE } from '../../common/typography'
+import {
+  TEXT_BASE,
+  TEXT_SECONDARY,
+} from '../../common/typography'
 
 export default StyleSheet.create({
   container: {
@@ -19,5 +22,8 @@ export default StyleSheet.create({
   },
   textLabel: {
     ...TEXT_BASE,
+  },
+  textCaption: {
+    ...TEXT_SECONDARY,
   },
 })
