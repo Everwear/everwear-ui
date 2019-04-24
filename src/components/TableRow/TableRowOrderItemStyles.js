@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import {
   TEXT_BASE,
-  TEXT_BASE_BOLD,
+  TEXT_BASE_MEDIUM,
 } from '../../common/typography'
 
 export default StyleSheet.create({
@@ -17,7 +17,7 @@ export default StyleSheet.create({
     height: 32,
   },
   title: {
-    ...TEXT_BASE_BOLD,
+    ...TEXT_BASE_MEDIUM,
     marginBottom: 8,
     color: '#100a50',
   },
@@ -26,7 +26,7 @@ export default StyleSheet.create({
     marginBottom: 8,
   },
   price: {
-    ...TEXT_BASE_BOLD,
+    ...TEXT_BASE_MEDIUM,
     color: '#100a50',
   },
   status: {

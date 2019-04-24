@@ -30,3 +30,7 @@ export function S({
     </Text>
   )
 }
+
+export function dollarify(amount) {
+  return `${amount < 0 ? '-' : '+'}$${Math.abs(amount)}`
+}

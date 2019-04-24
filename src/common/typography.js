@@ -6,9 +6,14 @@ export const TEXT_BASE = {
   color: '#717486',
 }
 
-export const TEXT_BASE_BOLD = {
+export const TEXT_BASE_MEDIUM = {
   ...TEXT_BASE,
   fontFamily: 'WorkSans-Medium',
+}
+
+export const TEXT_BASE_SEMIBOLD = {
+  ...TEXT_BASE,
+  fontFamily: 'WorkSans-SemiBold',
 }
 
 export const TEXT_SECONDARY = {

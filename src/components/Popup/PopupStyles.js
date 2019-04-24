@@ -24,6 +24,7 @@ export default StyleSheet.create({
     marginBottom: 12,
     borderRadius: 3,
     backgroundColor: 'rgba(255,255,255,0.7)',
+    alignSelf: 'center',
   },
   outside: {
     position: 'absolute',

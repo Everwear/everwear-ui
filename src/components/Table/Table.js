@@ -39,7 +39,10 @@ class Table extends Component {
 
     if (onPress) {
       return (
-        <TouchableOpacity style={[$.container, style]}>
+        <TouchableOpacity
+          style={[$.container, style]}
+          onPress={onPress}
+        >
           {content}
         </TouchableOpacity>
       )

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import {
   TEXT_BASE,
-  TEXT_BASE_BOLD,
+  TEXT_BASE_MEDIUM,
   TEXT_VIBRANT,
 } from '../../common/typography'
 
@@ -60,7 +60,7 @@ export default StyleSheet.create({
     color: '#087fff',
   },
   buttonTextBold: {
-    ...TEXT_BASE_BOLD,
+    ...TEXT_BASE_MEDIUM,
     textAlign: 'center',
     color: '#087fff',
   },
