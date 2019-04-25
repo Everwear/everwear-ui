@@ -6,6 +6,14 @@ export const TEXT_BASE = {
   color: '#717486',
 }
 
+export const TEXT_BIG = {
+  fontSize: 20,
+  fontFamily: 'WorkSans-Regular',
+  letterSpacing: -0.1,
+  lineHeight: 26,
+  color: '#717486',
+}
+
 export const TEXT_BASE_MEDIUM = {
   ...TEXT_BASE,
   fontFamily: 'WorkSans-Medium',
