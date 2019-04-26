@@ -21,7 +21,7 @@ export default StyleSheet.create({
   bar: {
     width: 80,
     height: 6,
-    marginBottom: 12,
+    marginBottom: 7,
     borderRadius: 3,
     backgroundColor: 'rgba(255,255,255,0.7)',
     alignSelf: 'center',

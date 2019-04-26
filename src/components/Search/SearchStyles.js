@@ -4,6 +4,7 @@ export default StyleSheet.create({
   input: {
     flex: 1,
     height: 32,
+    paddingVertical: 0,
     paddingHorizontal: 20,
     fontSize: 16,
     fontFamily: 'WorkSans-Regular',
