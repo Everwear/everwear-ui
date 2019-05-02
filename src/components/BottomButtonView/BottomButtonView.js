@@ -29,7 +29,7 @@ class BottomButtonView extends Component {
       buttonOnPress,
       buttonLoading,
       refreshControl,
-      buttonVisibile = true,
+      buttonVisible = true,
       avoidKeyboardScrollView,
       avoidKeyboard,
       children,
@@ -74,7 +74,7 @@ class BottomButtonView extends Component {
     const component = (
       <View style={$.container}>
         {scrollView}
-        {buttonVisibile &&
+        {buttonVisible &&
           <View style={$.buttonWrap}>
             <Button
               style={$.button}
