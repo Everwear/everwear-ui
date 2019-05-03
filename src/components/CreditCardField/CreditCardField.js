@@ -31,6 +31,18 @@ class CreditCardField extends Component {
       focused,
     } = this.state
 
+    let mask = '9999 9999 9999 9999'
+
+    if (/^3[47]\d{0,13}/.test(valueNumber)) {
+      mask = '9999 999999 99999' // american express
+    }
+    if (/^3(?:0([0-5]|9)|[689]\d?)\d{0,11}/.test(valueNumber)) {
+      mask = '9999 999999 9999' // diners
+    }
+    if (/^(?:2131|1800)\d{0,11}/.test(valueNumber)) {
+      mask = '9999 999999 99999' // jcb15
+    }
+
     return (
       <View style={[$.container, style]}>
         <View
@@ -50,7 +62,10 @@ class CreditCardField extends Component {
             onBlur={this.toggleFocus}
             onFocus={this.toggleFocus}
             onChangeText={(value) => {
-              onChangeNumber(VMasker.toPattern(value, '9999 9999 9999 9999'))
+              onChangeNumber(VMasker.toPattern(value, mask))
+              if (value.length >= mask.length) {
+                this.inputExpiry.focus()
+              }
             }}
           />
           <TextInput
@@ -63,6 +78,12 @@ class CreditCardField extends Component {
             onFocus={this.toggleFocus}
             onChangeText={(value) => {
               onChangeExpiry(VMasker.toPattern(value, '99/99'))
+              if (value.length >= 5) {
+                this.inputCVV.focus()
+              }
+            }}
+            ref={(ref) => {
+              this.inputExpiry = ref
             }}
           />
           <TextInput
@@ -75,6 +96,9 @@ class CreditCardField extends Component {
             onFocus={this.toggleFocus}
             onChangeText={(valueCVV) => {
               onChangeCVV(valueCVV)
+            }}
+            ref={(ref) => {
+              this.inputCVV = ref
             }}
           />
         </View>
