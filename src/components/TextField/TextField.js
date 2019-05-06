@@ -19,6 +19,8 @@ class TextField extends Component {
       hint,
       style,
       forwardedRef,
+      onFocus,
+      onBlur,
       ...props
     } = this.props
 
@@ -37,8 +39,14 @@ class TextField extends Component {
           <TextInput
             {...props}
             ref={forwardedRef}
-            onBlur={this.toggleFocus}
-            onFocus={this.toggleFocus}
+            onBlur={(e) => {
+              this.toggleFocus()
+              onBlur && onBlur(e)
+            }}
+            onFocus={(e) => {
+              this.toggleFocus()
+              onFocus && onFocus(e)
+            }}
             placeholderTextColor="#8d90a1"
             style={$.input}
           />
