@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import TableRowBase from './TableRowBase'
 import $ from './TableRowStyles'
 
@@ -12,6 +12,7 @@ const TableRow = ({
   textLabelStyle,
   textCaption,
   textCaptionStyle,
+  onInfo,
   children,
   ...props
 }) => (
@@ -31,6 +32,25 @@ const TableRow = ({
           {textCaption}
         </Text>}
     </View>
+    {!!onInfo &&
+      <TouchableOpacity
+        hitSlop={{
+          top: 16,
+          left: 16,
+          bottom: 16,
+          right: 16,
+        }}
+        onPress={() => {
+          requestAnimationFrame(() => {
+            onInfo()
+          })
+        }}
+      >
+        <Image
+          source={require('./img/info.png')}
+          style={$.info}
+        />
+      </TouchableOpacity>}
     {children}
   </TableRowBase>
 )

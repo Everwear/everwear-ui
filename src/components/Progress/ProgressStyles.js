@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native'
+import { CLR_WHISPER } from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
     height: 8,
     width: 120,
-    backgroundColor: '#f5f4fa',
+    backgroundColor: CLR_WHISPER,
     borderRadius: 4,
   },
   progress: {

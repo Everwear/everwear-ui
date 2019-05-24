@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { CLR_WHISPER } from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
@@ -6,8 +7,8 @@ export default StyleSheet.create({
     paddingHorizontal: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f5f4fa',
-    borderRadius: 24,
+    backgroundColor: CLR_WHISPER,
+    borderRadius: 16,
   },
   label: {
     lineHeight: 32,
@@ -17,8 +18,5 @@ export default StyleSheet.create({
   },
   disabledContainer: {
     backgroundColor: null,
-  },
-  disabledLabel: {
-    //
   },
 })

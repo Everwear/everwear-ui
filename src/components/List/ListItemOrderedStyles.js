@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { TEXT_BASE } from '../../common/typography'
-import { BORDER_WIDTH, CLR_DIVIDER } from '../../common/vars'
+import { BORDER_WIDTH, CLR_BOMBAY, CLR_DIVIDER } from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
@@ -15,7 +15,7 @@ export default StyleSheet.create({
   },
   num: {
     ...TEXT_BASE,
-    color: '#afb1b8',
+    color: CLR_BOMBAY,
     width: 25,
   },
   text: {

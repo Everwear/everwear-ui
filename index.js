@@ -1,15 +1,18 @@
 import Banner from './src/components/Banner/Banner'
 import Button from './src/components/Button/Button'
 import ButtonSmall from './src/components/Button/ButtonSmall'
+import ButtonBig from './src/components/Button/ButtonBig'
 import Table from './src/components/Table/Table'
 import TableRow from './src/components/TableRow/TableRow'
 import TableRowBase from './src/components/TableRow/TableRowBase'
-import TableRowOrder from './src/components/TableRow/TableRowOrder'
-import TableRowOrderItem from './src/components/TableRow/TableRowOrderItem'
+import TableRowBagItem from './src/components/TableRow/TableRowBagItem'
 import TableRowArrow from './src/components/TableRow/TableRowArrow'
 import TableRowStore from './src/components/TableRow/TableRowStore'
 import TableRowOperation from './src/components/TableRow/TableRowOperation'
 import TableRowGroup from './src/components/TableRow/TableRowGroup'
+import TableRowCheckbox from './src/components/TableRow/TableRowCheckbox'
+import TableRowRadio from './src/components/TableRow/TableRowRadio'
+import TableRowPath from './src/components/TableRow/TableRowPath'
 import TextField from './src/components/TextField/TextField'
 import TextFieldAddress from './src/components/TextFieldAddress/TextFieldAddress'
 import CreditCardField from './src/components/CreditCardField/CreditCardField'
@@ -47,6 +50,12 @@ import ListItemOrdered from './src/components/List/ListItemOrdered'
 import Progress from './src/components/Progress/Progress'
 import Search from './src/components/Search/Search'
 import Link from './src/components/Link/Link'
+import Tabs from './src/components/Tabs/Tabs'
+import ItemCard from './src/components/ItemCard/ItemCard'
+import PromoCard from './src/components/PromoCard/PromoCard'
+import Gallery from './src/components/Gallery/Gallery'
+import ComboBox from './src/components/ComboBox/ComboBox'
+import Bag from './src/components/Bag/Bag'
 
 import Alert from './src/hoc/Alert/Alert'
 import { AlertProvider } from './src/hoc/Alert/AlertProvider'
@@ -59,18 +68,21 @@ import extend from 'lodash/extend'
 module.exports = extend({
   Banner,
   Button,
+  ButtonBig,
   ButtonSmall,
   BottomButtonView,
   CreditCardField,
   Table,
   TableRow,
   TableRowBase,
-  TableRowOrder,
-  TableRowOrderItem,
+  TableRowBagItem,
   TableRowArrow,
   TableRowStore,
   TableRowOperation,
   TableRowGroup,
+  TableRowCheckbox,
+  TableRowRadio,
+  TableRowPath,
   TopImageView,
   TextField,
   TextFieldAddress,
@@ -106,6 +118,12 @@ module.exports = extend({
   Progress,
   Search,
   Link,
+  Tabs,
+  ItemCard,
+  PromoCard,
+  Gallery,
+  ComboBox,
+  Bag,
 
   HOC: {
     Alert,

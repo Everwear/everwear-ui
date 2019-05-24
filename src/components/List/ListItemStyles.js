@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { CLR_STORM_GREY, CLR_PINK } from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
@@ -15,13 +16,13 @@ export default StyleSheet.create({
     fontFamily: 'WorkSans-SemiBold',
     letterSpacing: -0.1,
     lineHeight: 26,
-    color: '#f9cec6',
+    color: CLR_PINK,
   },
   text: {
     fontSize: 20,
     fontFamily: 'WorkSans-Regular',
     letterSpacing: -0.1,
     lineHeight: 26,
-    color: '#717486',
+    color: CLR_STORM_GREY,
   },
 })

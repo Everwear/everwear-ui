@@ -14,8 +14,8 @@ export default StyleSheet.create({
   content: {
     width: '100%',
     paddingVertical: 40,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
     backgroundColor: '#fff',
   },
   bar: {

@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { TEXT_BASE } from '../../common/typography'
+import { CLR_DARK_BLUE } from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
@@ -8,7 +9,7 @@ export default StyleSheet.create({
   },
   title: {
     ...TEXT_BASE,
-    color: '#100a50',
+    color: CLR_DARK_BLUE,
   },
   authorized: {
     marginTop: 2,

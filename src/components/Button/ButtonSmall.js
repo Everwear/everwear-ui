@@ -9,7 +9,7 @@ import {
   ActivityIndicator,
 } from 'react-native'
 
-export default ({
+const ButtonSmall = ({
   style = {},
   theme,
   selected,
@@ -73,3 +73,5 @@ export default ({
     </View>
   )
 }
+
+export default ButtonSmall

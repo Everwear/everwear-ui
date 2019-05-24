@@ -1,5 +1,6 @@
 import React from 'react'
 import { TextInput } from 'react-native'
+import { CLR_MANATEE } from '../../common/vars'
 import $ from './SearchStyles'
 
 const Search = ({
@@ -9,7 +10,7 @@ const Search = ({
   return (
     <TextInput
       {...props}
-      placeholderTextColor="#8d90a1"
+      placeholderTextColor={CLR_MANATEE}
       style={[$.input, style]}
     />
   )

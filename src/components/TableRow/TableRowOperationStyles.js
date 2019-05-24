@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { CLR_DARK_BLUE } from '../../common/vars'
 import {
   TEXT_BASE,
   TEXT_SECONDARY,
@@ -15,7 +16,7 @@ export default StyleSheet.create({
   },
   store: {
     ...TEXT_BASE,
-    color: '#100a50',
+    color: CLR_DARK_BLUE,
   },
   amount: {
     ...TEXT_BASE,

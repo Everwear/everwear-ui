@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { TEXT_FOOTNOTE } from '../../common/typography'
+import { CLR_DIVIDER, CLR_DARK_BLUE } from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
@@ -10,7 +11,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomWidth: 1,
-    borderBottomColor: '#e1e2e8',
+    borderBottomColor: CLR_DIVIDER,
   },
   inputWrapFocus: {
     borderBottomColor: '#4c73ff',
@@ -20,21 +21,21 @@ export default StyleSheet.create({
     height: 43,
     fontSize: 16,
     fontFamily: 'WorkSans-Regular',
-    color: '#100a50',
+    color: CLR_DARK_BLUE,
   },
   expiry: {
     width: 70,
     height: 43,
     fontSize: 16,
     fontFamily: 'WorkSans-Regular',
-    color: '#100a50',
+    color: CLR_DARK_BLUE,
   },
   cvv: {
     width: 50,
     height: 43,
     fontSize: 16,
     fontFamily: 'WorkSans-Regular',
-    color: '#100a50',
+    color: CLR_DARK_BLUE,
   },
   hint: {
     ...TEXT_FOOTNOTE,

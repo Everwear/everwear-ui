@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { CLR_DARK_BLUE } from '../../common/vars'
 import {
   TEXT_BASE,
   TEXT_SECONDARY,
@@ -15,7 +16,7 @@ export default StyleSheet.create({
   },
   text: {
     ...TEXT_BASE,
-    color: '#100a50',
+    color: CLR_DARK_BLUE,
   },
   textValue: {
     ...TEXT_BASE,
@@ -25,5 +26,10 @@ export default StyleSheet.create({
   },
   textCaption: {
     ...TEXT_SECONDARY,
+  },
+  info: {
+    marginLeft: 8,
+    height: 24,
+    width: 24,
   },
 })

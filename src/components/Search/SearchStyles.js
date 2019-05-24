@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { CLR_WHISPER, CLR_DARK_BLUE } from '../../common/vars'
 
 export default StyleSheet.create({
   input: {
@@ -9,8 +10,8 @@ export default StyleSheet.create({
     fontSize: 16,
     fontFamily: 'WorkSans-Regular',
     letterSpacing: -0.2,
-    backgroundColor: '#f5f4fa',
+    backgroundColor: CLR_WHISPER,
     borderRadius: 16,
-    color: '#100a50',
+    color: CLR_DARK_BLUE,
   },
 })

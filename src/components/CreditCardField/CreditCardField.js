@@ -1,6 +1,7 @@
 import VMasker from 'vanilla-masker'
 import React, { Component } from 'react'
 import { TextInput, View, Text } from 'react-native'
+import { CLR_MANATEE } from '../../common/vars'
 import { cn } from '../../common/utils'
 import $ from './CreditCardFieldStyles'
 
@@ -55,7 +56,7 @@ class CreditCardField extends Component {
             style={$.number}
             value={valueNumber}
             autoFocus={true}
-            placeholderTextColor="#8d90a1"
+            placeholderTextColor={CLR_MANATEE}
             placeholder="Card number"
             keyboardType="numeric"
             maxLength={19}

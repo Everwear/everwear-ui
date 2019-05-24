@@ -5,5 +5,6 @@ export default StyleSheet.create({
     width: 7,
     height: 12,
     alignSelf: 'center',
+    marginLeft: 8,
   },
 })
