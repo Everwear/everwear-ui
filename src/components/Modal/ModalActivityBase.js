@@ -6,19 +6,18 @@ export default ({
   text,
   caption,
 }) => (
-  <View>
-    <View style={$.content}>
-      {text &&
-        <Text style={$.text}>
-          {text}
-        </Text>}
-      {caption &&
-        <Text style={$.caption}>
-          {caption}
-        </Text>}
-      <ActivityIndicator
-        style={$.spinner}
-      />
-    </View>
+  <View style={$.content}>
+    {text &&
+      <Text style={$.text}>
+        {text}
+      </Text>}
+    {caption &&
+      <Text style={$.caption}>
+        {caption}
+      </Text>}
+    <ActivityIndicator
+      style={$.spinner}
+      size="large"
+    />
   </View>
 )

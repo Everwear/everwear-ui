@@ -1,8 +1,10 @@
 import React from 'react'
-import { TouchableOpacity, Image, ScrollView } from 'react-native'
+import { ScrollView } from 'react-native'
+import RemoteImage from '../RemoteImage/RemoteImage'
 import $ from './GalleryStyles'
 
 const Gallery = ({
+  photos,
   style,
 }) => (
   <ScrollView
@@ -10,24 +12,12 @@ const Gallery = ({
     style={[$.container, style]}
     showsHorizontalScrollIndicator={true}
   >
-    <TouchableOpacity onPress={() => {}}>
-      <Image
+    {photos.map(({ url }) =>
+      <RemoteImage
+        key={url}
         style={$.image}
-        source={require('./img/image.jpg')}
-      />
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => {}}>
-      <Image
-        style={$.image}
-        source={require('./img/image.jpg')}
-      />
-    </TouchableOpacity>
-    <TouchableOpacity onPress={() => {}}>
-      <Image
-        style={$.image}
-        source={require('./img/image.jpg')}
-      />
-    </TouchableOpacity>
+        source={{ uri: url }}
+      />)}
   </ScrollView>
 )
 

@@ -46,4 +46,7 @@ export default StyleSheet.create({
     borderBottomColor: CLR_DIVIDER,
     borderBottomWidth: BORDER_WIDTH,
   },
+  swipeout: {
+    backgroundColor: null,
+  },
 })

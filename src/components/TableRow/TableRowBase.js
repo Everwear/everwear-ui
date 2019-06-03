@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Swipeout from 'react-native-swipeout'
 import { View, Image, TouchableHighlight, Animated } from 'react-native'
 import RemoteImage from '../RemoteImage/RemoteImage'
 import { cn } from '../../common/utils'
@@ -17,44 +18,51 @@ const TableRowBase = ({
   noTopSep,
   noBottomSep,
   fullWidthSep,
+  swipeoutRight,
+  swipeoutOnScroll,
   onPress,
   children,
   testID,
 }) => {
   const content = (
-    <View
-      style={cn($, {
-        'content': true,
-        'contentTopSep': fullWidthSep && !first && !(noTopSep === true),
-        'contentBottomSep': fullWidthSep && !last && !(noBottomSep === true),
-      })}
+    <SwipeoutWrap
+      swipeoutRight={swipeoutRight}
+      swipeoutOnScroll={swipeoutOnScroll}
     >
-      {imageIsLoading &&
-        <Fade style={[$.image, imageStyle]}/>}
-      {imageIsLoading || image && !image.uri &&
-        <Image
-          style={[$.image, imageStyle]}
-          source={image}
-        />}
-      {imageIsLoading || image && !!image.uri &&
-        <RemoteImage
-          style={[$.image, imageStyle]}
-          source={image}
-        />}
-      {imageView &&
-        <View style={[$.imageView, imageViewStyle]}>
-          {imageView}
-        </View>}
       <View
         style={cn($, {
-          'wrap': true,
-          'wrapTopSep': !fullWidthSep && !first && !(noTopSep === true),
-          'wrapBottomSep': !fullWidthSep && !last && !(noBottomSep === true),
+          'content': true,
+          'contentTopSep': fullWidthSep && !first && !(noTopSep === true),
+          'contentBottomSep': fullWidthSep && !last && !(noBottomSep === true),
         })}
       >
-        {children}
+        {imageIsLoading &&
+          <Fade style={[$.image, imageStyle]}/>}
+        {imageIsLoading || image && !image.uri &&
+          <Image
+            style={[$.image, imageStyle]}
+            source={image}
+          />}
+        {imageIsLoading || image && !!image.uri &&
+          <RemoteImage
+            style={[$.image, imageStyle]}
+            source={image}
+          />}
+        {imageView &&
+          <View style={[$.imageView, imageViewStyle]}>
+            {imageView}
+          </View>}
+        <View
+          style={cn($, {
+            'wrap': true,
+            'wrapTopSep': !fullWidthSep && !first && !(noTopSep === true),
+            'wrapBottomSep': !fullWidthSep && !last && !(noBottomSep === true),
+          })}
+        >
+          {children}
+        </View>
       </View>
-    </View>
+    </SwipeoutWrap>
   )
 
   const props = {
@@ -88,10 +96,6 @@ const TableRowBase = ({
 TableRowBase.propTypes = {
   last: PropTypes.bool,
   first: PropTypes.bool,
-  style: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array,
-  ]),
   image: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.array,
@@ -151,4 +155,24 @@ const Fade = ({
       }]}
     />
   )
+}
+
+const SwipeoutWrap = ({
+  swipeoutRight,
+  swipeoutOnScroll,
+  children,
+}) => {
+  if (swipeoutRight) {
+    return (
+      <Swipeout
+        autoClose={true}
+        style={$.swipeout}
+        right={swipeoutRight}
+        scroll={swipeoutOnScroll}
+      >
+        {children}
+      </Swipeout>
+    )
+  }
+  return children
 }

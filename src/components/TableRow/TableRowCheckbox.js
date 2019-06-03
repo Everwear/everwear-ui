@@ -6,12 +6,22 @@ const IMAGE_ON = require('./img/checkbox_on.png')
 
 const TableRowCheckbox = ({
   checked,
+  disabled,
+  onPress,
   ...props
 }) => (
   <TableRow
     {...props}
-    image={checked ? IMAGE_ON : IMAGE_OFF}
     fullWidthSep={true}
+    image={checked ? IMAGE_ON : IMAGE_OFF}
+    style={disabled && {
+      opacity: 0.3,
+    }}
+    onPress={disabled ? null : (() => {
+      requestAnimationFrame(() => {
+        onPress()
+      })
+    })}
   />
 )
 

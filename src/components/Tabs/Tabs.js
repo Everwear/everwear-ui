@@ -4,19 +4,23 @@ import { cn } from '../../common/utils'
 import $ from './TabsStyles'
 
 const Tabs = ({
-  tabs,
+  value,
+  options,
+  onChange,
   style,
 }) => (
   <View style={[$.container, style]}>
-    {tabs.map((tab) =>
+    {options.map((tab) =>
       <TouchableOpacity
         key={tab.text}
-        onPress={tab.onPress}
+        onPress={() => {
+          onChange(tab.value)
+        }}
       >
         <View
           style={cn($, {
             'tab': true,
-            'tabSelected': tab.selected,
+            'tabSelected': tab.value === value,
           })}
         >
           <Text style={$.text}>{tab.text}</Text>

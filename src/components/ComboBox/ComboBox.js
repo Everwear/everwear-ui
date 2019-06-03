@@ -8,7 +8,7 @@ const ComboBox = ({
   children,
 }) => (
   <TouchableOpacity onPress={onPress} style={[$.container, style]}>
-    <Text style={$.text}>{children}</Text>
+    <Text style={$.text} numberOfLines={1}>{children}</Text>
     <Image style={$.arrow} source={require('./img/arrow.png')}/>
   </TouchableOpacity>
 )

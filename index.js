@@ -55,6 +55,7 @@ import ItemCard from './src/components/ItemCard/ItemCard'
 import PromoCard from './src/components/PromoCard/PromoCard'
 import Gallery from './src/components/Gallery/Gallery'
 import ComboBox from './src/components/ComboBox/ComboBox'
+import EmptyView from './src/components/EmptyView/EmptyView'
 import Bag from './src/components/Bag/Bag'
 
 import Alert from './src/hoc/Alert/Alert'
@@ -123,6 +124,7 @@ module.exports = extend({
   PromoCard,
   Gallery,
   ComboBox,
+  EmptyView,
   Bag,
 
   HOC: {

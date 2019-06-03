@@ -13,7 +13,8 @@ export default StyleSheet.create({
   },
   content: {
     width: '100%',
-    paddingVertical: 40,
+    paddingTop: 40,
+    paddingBottom: 52,
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
     backgroundColor: '#fff',

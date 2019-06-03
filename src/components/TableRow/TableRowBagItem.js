@@ -3,9 +3,18 @@ import { View, Text } from 'react-native'
 import RemoteImage from '../RemoteImage/RemoteImage'
 import ComboBox from '../ComboBox/ComboBox'
 import TableRowBase from './TableRowBase'
+import { CLR_RED } from '../../common/vars'
 import $ from './TableRowBagItemStyles'
 
 const TableRowBagItem = ({
+  name,
+  size,
+  price,
+  photo,
+  quantity,
+  onDelete,
+  onChangeQuantity,
+  swipeoutOnScroll,
   ...props
 }) => {
   return (
@@ -19,23 +28,36 @@ const TableRowBagItem = ({
             style={$.image}
             resizeMode="cover"
             source={{
-              uri: '',
+              uri: photo,
             }}
           />
         </View>
       }
+      swipeoutOnScroll={swipeoutOnScroll}
+      swipeoutRight={[{
+        text: 'Delete',
+        type: 'delete',
+        backgroundColor: CLR_RED,
+        underlayColor: CLR_RED,
+        onPress: onDelete,
+      }]}
     >
       <View style={$.container}>
-        <Text style={$.title}>
-          ASOS DESIGN cropped pink suit blazer
-        </Text>
+        <Text style={$.title}>{name}</Text>
         <View style={$.row}>
-          <Text style={$.price}>$55.97</Text>
+          <Text style={$.price}>${price}</Text>
           <Text style={$.label}>Pay later if you keep it</Text>
         </View>
         <View style={$.row}>
-          <ComboBox style={$.qty}>Qty: 1</ComboBox>
-          <ComboBox style={$.size}>Size: S</ComboBox>
+          <ComboBox
+            style={$.qty}
+            onPress={onChangeQuantity}
+          >
+            Qty: {quantity}
+          </ComboBox>
+          <Text style={$.size}>
+            Size: {size}
+          </Text>
         </View>
       </View>
     </TableRowBase>

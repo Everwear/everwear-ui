@@ -1,10 +1,6 @@
 import { StyleSheet } from 'react-native'
-import {
-  TEXT_BASE, TEXT_SECONDARY,
-} from '../../common/typography'
-import {
-  CLR_DARK_BLUE,
-} from '../../common/vars'
+import { TEXT_BASE, TEXT_SECONDARY } from '../../common/typography'
+import { CLR_DARK_BLUE } from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
@@ -37,9 +33,9 @@ export default StyleSheet.create({
   row: {
     width: '100%',
     flexDirection: 'row',
-    alignItems: 'flex-end',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     marginTop: 8,
-
   },
   price: {
     ...TEXT_BASE,
@@ -47,15 +43,15 @@ export default StyleSheet.create({
   },
   label: {
     ...TEXT_SECONDARY,
-    marginLeft: 5,
     lineHeight: 21,
+    marginLeft: 5,
   },
   qty: {
-    flex: 1,
-    marginRight: 2,
+    width: '50%',
+    marginRight: 16,
   },
   size: {
-    flex: 1,
-    marginLeft: 2,
+    ...TEXT_BASE,
+    color: CLR_DARK_BLUE,
   },
 })

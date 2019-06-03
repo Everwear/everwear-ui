@@ -1,21 +1,26 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
+import RemoteImage from '../RemoteImage/RemoteImage'
 import $ from './ItemCardStyles'
 
 const ItemCard = ({
+  name,
+  storeName,
+  storeUrl,
+  photo,
   style,
   onPress,
 }) => (
   <TouchableOpacity onPress={onPress} style={[$.container, style]}>
     <View>
-      <Image
+      <RemoteImage
         style={$.image}
-        source={require('./img/image.jpg')}
+        source={{ uri: photo }}
       />
       <View>
-        <Text style={$.title} numberOfLines={1}>ASOS DESIGN cropped purple awesome stop start</Text>
-        <Text style={$.text}>Blazer</Text>
-        <Text style={$.text}>asos.com</Text>
+        <Text style={$.title} numberOfLines={1}>{name}</Text>
+        <Text style={$.text}>{storeName}</Text>
+        <Text style={$.text}>{storeUrl.replace('https://www.', '')}</Text>
       </View>
     </View>
   </TouchableOpacity>
