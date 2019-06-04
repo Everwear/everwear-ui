@@ -20,11 +20,6 @@ import TextVibrate from './src/components/Text/TextVibrate'
 import TextSecondary from './src/components/Text/TextSecondary'
 import TextBase from './src/components/Text/TextBase'
 import TextBaseCenter from './src/components/Text/TextBaseCenter'
-import TextH1 from './src/components/Text/TextH1'
-import TextH1Center from './src/components/Text/TextH1Center'
-import TextH2 from './src/components/Text/TextH2'
-import TextH2Center from './src/components/Text/TextH2Center'
-import TextH3 from './src/components/Text/TextH3'
 import RemoteImage from './src/components/RemoteImage/RemoteImage'
 import StoreLogo from './src/components/StoreLogo/StoreLogo'
 // import SegmentedTab from './src/components/SegmentedTab/SegmentedTab'
@@ -91,11 +86,6 @@ module.exports = extend({
   TextSecondary,
   TextBase,
   TextBaseCenter,
-  TextH1,
-  TextH1Center,
-  TextH2,
-  TextH2Center,
-  TextH3,
   RemoteImage,
   StoreLogo,
   // SegmentedTab,

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { CLR_STORM_GREY, CLR_DIVIDER, BORDER_WIDTH } from '../../common/vars'
+import { CLR_DARK_BLUE, CLR_DIVIDER, BORDER_WIDTH } from '../../common/vars'
 import { TEXT_BASE } from '../../common/typography'
 
 export default StyleSheet.create({
@@ -26,6 +26,6 @@ export default StyleSheet.create({
   },
   listItemText: {
     ...TEXT_BASE,
-    color: CLR_STORM_GREY,
+    color: CLR_DARK_BLUE,
   },
 })
