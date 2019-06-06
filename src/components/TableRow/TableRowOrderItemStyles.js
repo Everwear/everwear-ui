@@ -7,6 +7,9 @@ export default StyleSheet.create({
     flex: 1,
     alignSelf: 'flex-start',
   },
+  inactive: {
+    opacity: 0.3,
+  },
   imageWrap: {
     width: 100,
     height: 128,
@@ -28,6 +31,7 @@ export default StyleSheet.create({
   },
   title: {
     ...TEXT_BASE,
+    marginBottom: 8,
     color: CLR_DARK_BLUE,
   },
   row: {
@@ -35,24 +39,26 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    marginTop: 8,
   },
   price: {
     ...TEXT_BASE,
     lineHeight: 21,
   },
-  label: {
+  status: {
     ...TEXT_FOOTNOTE,
     lineHeight: 21,
     marginLeft: 5,
   },
-  qty: {
-    width: '50%',
-    marginRight: 8,
-  },
-  size: {
+  params: {
     ...TEXT_BASE,
-    color: CLR_DARK_BLUE,
-    width: '50%',
+  },
+  otherItems: {
+    flexDirection: 'row',
+  },
+  otherItem: {
+    marginRight: 12,
+    borderRadius: 4,
+    height: 66,
+    width: 52,
   },
 })

@@ -1,5 +1,11 @@
 import { StyleSheet } from 'react-native'
-import { CLR_ORANGE, CLR_DIVIDER } from '../../common/vars'
+import { TEXT_BASE_BOLD } from '../../common/typography'
+import {
+  CLR_ORANGE,
+  CLR_STORM_GREY,
+  CLR_DARK_BLUE,
+  CLR_DIVIDER
+} from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
@@ -42,5 +48,12 @@ export default StyleSheet.create({
   lineCurrent: {
     backgroundColor: CLR_ORANGE,
     bottom: '50%',
+  },
+  text: {
+    color: CLR_STORM_GREY,
+  },
+  textCurrent: {
+    ...TEXT_BASE_BOLD,
+    color: CLR_DARK_BLUE,
   },
 })

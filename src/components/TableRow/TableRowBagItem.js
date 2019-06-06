@@ -55,7 +55,10 @@ const TableRowBagItem = ({
           >
             Qty: {quantity}
           </ComboBox>
-          <Text style={$.size}>
+          <Text
+            style={$.size}
+            numberOfLines={1}
+          >
             Size: {size}
           </Text>
         </View>

@@ -6,6 +6,7 @@ import Table from './src/components/Table/Table'
 import TableRow from './src/components/TableRow/TableRow'
 import TableRowBase from './src/components/TableRow/TableRowBase'
 import TableRowBagItem from './src/components/TableRow/TableRowBagItem'
+import TableRowOrderItem from './src/components/TableRow/TableRowOrderItem'
 import TableRowArrow from './src/components/TableRow/TableRowArrow'
 import TableRowStore from './src/components/TableRow/TableRowStore'
 import TableRowOperation from './src/components/TableRow/TableRowOperation'
@@ -72,6 +73,7 @@ module.exports = extend({
   TableRow,
   TableRowBase,
   TableRowBagItem,
+  TableRowOrderItem,
   TableRowArrow,
   TableRowStore,
   TableRowOperation,

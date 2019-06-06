@@ -5,7 +5,7 @@ import { CLR_WHISPER, CLR_DARK_BLUE } from '../../common/vars'
 export default StyleSheet.create({
   container: {
     height: 48,
-    paddingLeft: 12,
+    paddingLeft: 24,
     paddingRight: 30,
     borderRadius: 24,
     backgroundColor: CLR_WHISPER,

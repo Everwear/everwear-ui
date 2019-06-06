@@ -6,7 +6,7 @@ import $ from './ItemCardStyles'
 const ItemCard = ({
   name,
   storeName,
-  storeUrl,
+  category,
   photo,
   style,
   onPress,
@@ -19,8 +19,8 @@ const ItemCard = ({
       />
       <View>
         <Text style={$.title} numberOfLines={1}>{name}</Text>
-        <Text style={$.text}>{storeName}</Text>
-        <Text style={$.text}>{storeUrl.replace('https://www.', '')}</Text>
+        <Text style={$.text}>{category}</Text>
+        <Text style={$.text}>Seller: {storeName}</Text>
       </View>
     </View>
   </TouchableOpacity>

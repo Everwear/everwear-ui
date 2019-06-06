@@ -20,6 +20,7 @@ const TableRowBase = ({
   fullWidthSep,
   swipeoutRight,
   swipeoutOnScroll,
+  footerView,
   onPress,
   children,
   testID,
@@ -62,6 +63,10 @@ const TableRowBase = ({
           {children}
         </View>
       </View>
+      {footerView &&
+        <View style={$.footer}>
+          {footerView}
+        </View>}
     </SwipeoutWrap>
   )
 
@@ -79,7 +84,11 @@ const TableRowBase = ({
       <TouchableHighlight
         {...props}
         underlayColor="#dce0e3"
-        onPress={onPress}
+        onPress={onPress && (() => {
+          requestAnimationFrame(() => {
+            onPress()
+          })
+        })}
       >
         {content}
       </TouchableHighlight>

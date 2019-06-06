@@ -41,7 +41,11 @@ class Table extends Component {
       return (
         <TouchableOpacity
           style={[$.container, style]}
-          onPress={onPress}
+          onPress={onPress && (() => {
+            requestAnimationFrame(() => {
+              onPress()
+            })
+          })}
         >
           {content}
         </TouchableOpacity>

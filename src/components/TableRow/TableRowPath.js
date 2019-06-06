@@ -7,6 +7,7 @@ import $ from './TableRowPathStyles'
 const TableRowArrow = ({
   passed,
   current,
+  textStyle,
   ...props
 }) => {
   const {
@@ -17,6 +18,10 @@ const TableRowArrow = ({
   return (
     <TableRow
       {...props}
+      textStyle={[textStyle, cn($, {
+        'text': true,
+        'textCurrent': current,
+      })]}
       imageViewStyle={$.container}
       imageView={
         <>

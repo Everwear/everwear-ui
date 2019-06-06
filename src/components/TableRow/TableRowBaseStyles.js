@@ -49,4 +49,8 @@ export default StyleSheet.create({
   swipeout: {
     backgroundColor: null,
   },
+  footer: {
+    marginHorizontal: 20,
+    marginBottom: 12,
+  },
 })
