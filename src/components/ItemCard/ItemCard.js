@@ -10,6 +10,7 @@ const ItemCard = ({
   photo,
   style,
   onPress,
+  children,
 }) => (
   <TouchableOpacity onPress={onPress} style={[$.container, style]}>
     <View>
@@ -23,6 +24,7 @@ const ItemCard = ({
         <Text style={$.text}>Seller: {storeName}</Text>
       </View>
     </View>
+    {children}
   </TouchableOpacity>
 )
 

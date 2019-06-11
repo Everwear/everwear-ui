@@ -6,6 +6,7 @@ export default ({
   text,
   image,
   style,
+  children,
 }) => {
   return (
     <View style={[$.container, style]}>
@@ -16,6 +17,7 @@ export default ({
       <Text style={$.text}>
         {text}
       </Text>
+      {children}
     </View>
   )
 }
