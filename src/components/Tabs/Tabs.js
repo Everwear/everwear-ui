@@ -17,13 +17,15 @@ const Tabs = ({
           onChange(tab.value)
         }}
       >
-        <View
-          style={cn($, {
-            'tab': true,
-            'tabSelected': tab.value === value,
-          })}
-        >
-          <Text style={$.text}>{tab.text}</Text>
+        <View style={$.tabWrap}>
+          <View
+            style={cn($, {
+              'tab': true,
+              'tabSelected': tab.value === value,
+            })}
+          >
+            <Text style={$.text}>{tab.text}</Text>
+          </View>
         </View>
       </TouchableOpacity>)}
   </View>

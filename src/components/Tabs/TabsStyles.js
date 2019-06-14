@@ -4,9 +4,13 @@ import { CLR_DARK_BLUE } from '../../common/vars'
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
     marginBottom: 24,
     width: '100%',
+  },
+  tabWrap: {
+    width: 100,
+    alignItems: 'center',
   },
   tabSelected: {
     borderBottomWidth: 2,

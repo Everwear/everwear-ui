@@ -12,6 +12,7 @@ export default StyleSheet.create({
     zIndex: 2,
   },
   content: {
+    overflow: 'hidden',
     width: '100%',
     minHeight: 312,
     paddingTop: 40,

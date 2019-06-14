@@ -53,6 +53,7 @@ import Gallery from './src/components/Gallery/Gallery'
 import ComboBox from './src/components/ComboBox/ComboBox'
 import EmptyView from './src/components/EmptyView/EmptyView'
 import Bag from './src/components/Bag/Bag'
+import Message from './src/components/Message/Message'
 
 import Alert from './src/hoc/Alert/Alert'
 import { AlertProvider } from './src/hoc/Alert/AlertProvider'
@@ -118,6 +119,7 @@ module.exports = extend({
   ComboBox,
   EmptyView,
   Bag,
+  Message,
 
   HOC: {
     Alert,
