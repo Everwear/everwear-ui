@@ -10,8 +10,9 @@ const Search = ({
   return (
     <TextInput
       {...props}
-      placeholderTextColor={CLR_MANATEE}
       style={[$.input, style]}
+      placeholderTextColor={CLR_MANATEE}
+      returnKeyType="search"
     />
   )
 }
