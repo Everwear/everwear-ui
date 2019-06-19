@@ -45,7 +45,7 @@ const TableRowBagItem = ({
       <View style={$.container}>
         <Text style={$.title}>{name}</Text>
         <View style={$.row}>
-          <Text style={$.price}>${price * quantity}</Text>
+          <Text style={$.price}>${Math.round(price * quantity * 100) / 100}</Text>
           <Text style={$.label}>Pay later if you keep it</Text>
         </View>
         <View style={$.row}>
