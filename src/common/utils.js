@@ -34,3 +34,7 @@ export function S({
 export function dollarify(amount) {
   return `${amount < 0 ? '-' : '+'}$${Math.abs(amount)}`
 }
+
+export function _00(value) {
+  return value % 1 > 0 ? value.toFixed(2) : value
+}

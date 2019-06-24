@@ -31,6 +31,13 @@ export const TEXT_SECONDARY = {
   color: CLR_STORM_GREY,
 }
 
+export const TEXT_SECONDARY_BOLD = {
+  fontSize: 14,
+  fontFamily: 'WorkSans-SemiBold',
+  lineHeight: 16,
+  color: CLR_STORM_GREY,
+}
+
 export const TEXT_FOOTNOTE = {
   fontSize: 12,
   fontFamily: 'WorkSans-Regular',
@@ -48,5 +55,13 @@ export const TEXT_TITLE = {
   fontFamily: 'WorkSans-Regular',
   letterSpacing: -0.4,
   lineHeight: 36,
+  color: CLR_DARK_BLUE,
+}
+
+export const TEXT_SUBTITLE = {
+  fontSize: 20,
+  fontFamily: 'WorkSans-Regular',
+  letterSpacing: -0.4,
+  lineHeight: 22,
   color: CLR_DARK_BLUE,
 }

@@ -12,6 +12,7 @@ const TableRow = ({
   textLabelStyle,
   textCaption,
   textCaptionStyle,
+  infoIconRed,
   onInfo,
   children,
   ...props
@@ -25,7 +26,12 @@ const TableRow = ({
       {!!text &&
         <View style={$.row}>
           <Text style={[$.text, textStyle]}>{text}</Text>
-          <Text style={[$.textValue, textValueStyle]}>{textValue}</Text>
+          <Text
+            style={[$.textValue, textValueStyle]}
+            numberOfLines={1}
+          >
+            {textValue}
+          </Text>
         </View>}
       {!!textCaption &&
         <Text style={[$.textCaption, textCaptionStyle]}>
@@ -46,10 +52,16 @@ const TableRow = ({
           })
         }}
       >
-        <Image
-          source={require('./img/info.png')}
-          style={$.info}
-        />
+        {!infoIconRed &&
+          <Image
+            source={require('./img/info.png')}
+            style={$.info}
+          />}
+        {infoIconRed &&
+          <Image
+            source={require('./img/info_red.png')}
+            style={$.info}
+          />}
       </TouchableOpacity>}
     {children}
   </TableRowBase>

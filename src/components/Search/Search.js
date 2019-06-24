@@ -3,18 +3,18 @@ import { TextInput } from 'react-native'
 import { CLR_MANATEE } from '../../common/vars'
 import $ from './SearchStyles'
 
-const Search = ({
+const Search = React.forwardRef(({
   style,
   ...props,
-}) => {
-  return (
-    <TextInput
-      {...props}
-      style={[$.input, style]}
-      placeholderTextColor={CLR_MANATEE}
-      returnKeyType="search"
-    />
-  )
-}
+}, ref) => (
+  <TextInput
+    {...props}
+    style={[$.input, style]}
+    placeholderTextColor={CLR_MANATEE}
+    clearButtonMode="always"
+    returnKeyType="search"
+    ref={ref}
+  />
+))
 
 export default Search

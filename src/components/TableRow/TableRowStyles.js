@@ -20,6 +20,7 @@ export default StyleSheet.create({
   },
   textValue: {
     ...TEXT_BASE,
+    maxWidth: '50%',
   },
   textLabel: {
     ...TEXT_BASE,

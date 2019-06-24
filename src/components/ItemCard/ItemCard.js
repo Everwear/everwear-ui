@@ -8,6 +8,8 @@ const ItemCard = ({
   storeName,
   category,
   photo,
+  price,
+  originalPrice,
   style,
   onPress,
   children,
@@ -20,8 +22,20 @@ const ItemCard = ({
       />
       <View>
         <Text style={$.title} numberOfLines={1}>{name}</Text>
-        <Text style={$.text}>{category}</Text>
-        <Text style={$.text}>Seller: {storeName}</Text>
+        {price !== undefined &&
+          <Text style={$.text}>
+            {originalPrice ? null : `$${price}`}
+            {originalPrice &&
+              <>
+                <Text style={$.priceSale}>${price}{' '}</Text>
+                <Text style={$.priceOriginal}>${originalPrice}</Text>
+              </>}
+          </Text>}
+        {price === undefined &&
+          <>
+            <Text style={$.text}>{category}</Text>
+            <Text style={$.text}>Seller: {storeName}</Text>
+          </>}
       </View>
     </View>
     {children}

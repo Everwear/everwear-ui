@@ -5,7 +5,7 @@ import TableRowBase from './TableRowBase'
 import { cn } from '../../common/utils'
 import $ from './TableRowOrderItemStyles'
 
-const TableRowOrder = ({
+const TableRowOrderItem = ({
   name,
   size,
   price,
@@ -52,9 +52,10 @@ const TableRowOrder = ({
         <Text style={$.title} numberOfLines={3}>{name}</Text>
         <View style={$.row}>
           <Text style={$.price}>${price}</Text>
-          <Text style={$.status}>
-            {status === 'Paid' ? 'Paid' : 'Not paid'}
-          </Text>
+          {status !== 'paid' &&
+            <Text style={$.status}>
+              Not paid
+            </Text>}
         </View>
         <View style={$.row}>
           <Text style={$.params} numberOfLines={1}>
@@ -66,4 +67,4 @@ const TableRowOrder = ({
   )
 }
 
-export default TableRowOrder
+export default TableRowOrderItem
