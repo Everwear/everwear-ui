@@ -31,6 +31,18 @@ export function S({
   )
 }
 
+export function U({
+  style,
+  children,
+  ...props
+}) {
+  return (
+    <Text {...props} style={[{textDecorationLine: 'underline'}, style]}>
+      {children}
+    </Text>
+  )
+}
+
 export function dollarify(amount) {
   return `${amount < 0 ? '-' : '+'}$${Math.abs(amount)}`
 }

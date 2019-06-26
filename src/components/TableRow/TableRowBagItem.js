@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import RemoteImage from '../RemoteImage/RemoteImage'
 import ComboBox from '../ComboBox/ComboBox'
 import TableRowBase from './TableRowBase'
@@ -13,6 +13,7 @@ const TableRowBagItem = ({
   photo,
   quantity,
   onDelete,
+  onPressImage,
   onChangeQuantity,
   swipeoutOnScroll,
   ...props
@@ -22,7 +23,10 @@ const TableRowBagItem = ({
       {...props}
       fullWidthSep={true}
       imageView={
-        <View style={$.imageWrap}>
+        <TouchableOpacity
+          style={$.imageWrap}
+          onPress={onPressImage}
+        >
           <View style={$.imageOverlay}/>
           <RemoteImage
             style={$.image}
@@ -31,7 +35,7 @@ const TableRowBagItem = ({
               uri: photo,
             }}
           />
-        </View>
+        </TouchableOpacity>
       }
       swipeoutOnScroll={swipeoutOnScroll}
       swipeoutRight={[{

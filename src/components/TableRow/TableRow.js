@@ -13,6 +13,7 @@ const TableRow = ({
   textCaption,
   textCaptionStyle,
   infoIconRed,
+  infoIconRedFilled,
   onInfo,
   children,
   ...props
@@ -52,7 +53,7 @@ const TableRow = ({
           })
         }}
       >
-        {!infoIconRed &&
+        {!infoIconRed && !infoIconRedFilled &&
           <Image
             source={require('./img/info.png')}
             style={$.info}
@@ -60,6 +61,11 @@ const TableRow = ({
         {infoIconRed &&
           <Image
             source={require('./img/info_red.png')}
+            style={$.info}
+          />}
+        {infoIconRedFilled &&
+          <Image
+            source={require('./img/info_red_filled.png')}
             style={$.info}
           />}
       </TouchableOpacity>}
