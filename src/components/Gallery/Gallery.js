@@ -23,7 +23,6 @@ const Gallery = ({
         }}
       >
         <Link
-          color="#fff"
           style={$.close}
           onPress={() => {
             setFullscreen(false)

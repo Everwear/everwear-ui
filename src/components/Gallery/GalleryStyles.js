@@ -4,12 +4,12 @@ import { statusBarHeight } from '../../common/utils'
 export default StyleSheet.create({
   gallery: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#fff',
   },
   close: {
     position: 'absolute',
     top: statusBarHeight() + 6,
-    right: 20,
+    left: 20,
     zIndex: 1,
   },
   image: {

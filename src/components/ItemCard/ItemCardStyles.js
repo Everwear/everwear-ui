@@ -4,7 +4,7 @@ import {
   CLR_DARK_BLUE,
   CLR_WHISPER,
   CLR_ORANGE,
-  CLR_STORM_GREY,
+  CLR_MANATEE,
 } from '../../common/vars'
 
 const IMAGE_WIDTH = (Dimensions.get('window').width - 54) / 2
@@ -36,6 +36,6 @@ export default StyleSheet.create({
   },
   priceOriginal: {
     textDecorationLine: 'line-through',
-    color: CLR_STORM_GREY,
+    color: CLR_MANATEE,
   },
 })
