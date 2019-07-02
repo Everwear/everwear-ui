@@ -4,8 +4,8 @@ import { TEXT_BASE } from '../../common/typography'
 
 export default StyleSheet.create({
   container: {
-    // position: 'relative',
-    // zIndex: 100,
+    position: 'relative',
+    zIndex: 100,
   },
   input: {
     width: '100%',
