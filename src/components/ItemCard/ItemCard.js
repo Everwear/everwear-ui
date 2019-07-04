@@ -13,8 +13,13 @@ const ItemCard = ({
   style,
   onPress,
   children,
+  testID,
 }) => (
-  <TouchableOpacity onPress={onPress} style={[$.container, style]}>
+  <TouchableOpacity
+    onPress={onPress}
+    style={[$.container, style]}
+    testID={testID}
+  >
     <View>
       <RemoteImage
         style={$.image}

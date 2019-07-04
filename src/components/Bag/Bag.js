@@ -8,11 +8,13 @@ const IMAGE_ACTIVE = require('./img/bag_active.png')
 const Bag = ({
   style,
   count = 0,
+  testID,
   onPress,
 }) => (
   <TouchableOpacity
     onPress={onPress}
     style={[$.container, style]}
+    testID={testID}
     hitSlop={{
       top: 16,
       left: 16,
