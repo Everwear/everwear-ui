@@ -39,7 +39,6 @@ export default StyleSheet.create({
   },
   price: {
     ...TEXT_BASE,
-    lineHeight: 21,
   },
   label: {
     ...TEXT_FOOTNOTE,

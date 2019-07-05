@@ -3,6 +3,14 @@ import DropdownAlert from 'react-native-dropdownalert'
 const GlobalContext = React.createContext({})
 
 class AlertProvider extends Component {
+  alert(...args) {
+    this.dropdown.alert(...args)
+  }
+
+  alertWithType(...args) {
+    this.dropdown.alertWithType(...args)
+  }
+
   render() {
     const { children } = this.props
 
@@ -28,6 +36,7 @@ class AlertProvider extends Component {
           successImageSrc={null}
           successColor="#19d87c"
           errorColor="#e74848"
+          infoColor="#afb1b8"
           titleStyle={{
             textAlign: 'center',
             fontFamily: 'WorkSans-Semibold',

@@ -9,13 +9,13 @@ export default StyleSheet.create({
     paddingRight: 30,
     borderRadius: 24,
     backgroundColor: CLR_WHISPER,
+    justifyContent: 'center',
   },
   wrap: {
     width: '100%',
   },
   text: {
     ...TEXT_BASE,
-    lineHeight: 48,
     color: CLR_DARK_BLUE,
   },
   arrow: {
