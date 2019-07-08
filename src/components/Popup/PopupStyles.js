@@ -12,10 +12,13 @@ export default StyleSheet.create({
     zIndex: 2,
   },
   content: {
+    overflow: 'hidden',
     width: '100%',
-    paddingVertical: 40,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    minHeight: 312,
+    paddingTop: 40,
+    paddingBottom: 52,
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
     backgroundColor: '#fff',
   },
   bar: {

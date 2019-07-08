@@ -10,6 +10,7 @@ class Table extends Component {
       footer,
       onPress,
       children,
+      testID,
     } = this.props
 
     const elements = React.Children.toArray(children)
@@ -40,8 +41,13 @@ class Table extends Component {
     if (onPress) {
       return (
         <TouchableOpacity
+          testID={testID}
           style={[$.container, style]}
-          onPress={onPress}
+          onPress={() => {
+            requestAnimationFrame(() => {
+              onPress()
+            })
+          }}
         >
           {content}
         </TouchableOpacity>

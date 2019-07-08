@@ -1,15 +1,19 @@
 import Banner from './src/components/Banner/Banner'
 import Button from './src/components/Button/Button'
 import ButtonSmall from './src/components/Button/ButtonSmall'
+import ButtonBig from './src/components/Button/ButtonBig'
 import Table from './src/components/Table/Table'
 import TableRow from './src/components/TableRow/TableRow'
 import TableRowBase from './src/components/TableRow/TableRowBase'
-import TableRowOrder from './src/components/TableRow/TableRowOrder'
+import TableRowBagItem from './src/components/TableRow/TableRowBagItem'
 import TableRowOrderItem from './src/components/TableRow/TableRowOrderItem'
 import TableRowArrow from './src/components/TableRow/TableRowArrow'
 import TableRowStore from './src/components/TableRow/TableRowStore'
 import TableRowOperation from './src/components/TableRow/TableRowOperation'
 import TableRowGroup from './src/components/TableRow/TableRowGroup'
+import TableRowCheckbox from './src/components/TableRow/TableRowCheckbox'
+import TableRowRadio from './src/components/TableRow/TableRowRadio'
+import TableRowPath from './src/components/TableRow/TableRowPath'
 import TextField from './src/components/TextField/TextField'
 import TextFieldAddress from './src/components/TextFieldAddress/TextFieldAddress'
 import CreditCardField from './src/components/CreditCardField/CreditCardField'
@@ -17,11 +21,6 @@ import TextVibrate from './src/components/Text/TextVibrate'
 import TextSecondary from './src/components/Text/TextSecondary'
 import TextBase from './src/components/Text/TextBase'
 import TextBaseCenter from './src/components/Text/TextBaseCenter'
-import TextH1 from './src/components/Text/TextH1'
-import TextH1Center from './src/components/Text/TextH1Center'
-import TextH2 from './src/components/Text/TextH2'
-import TextH2Center from './src/components/Text/TextH2Center'
-import TextH3 from './src/components/Text/TextH3'
 import RemoteImage from './src/components/RemoteImage/RemoteImage'
 import StoreLogo from './src/components/StoreLogo/StoreLogo'
 // import SegmentedTab from './src/components/SegmentedTab/SegmentedTab'
@@ -47,6 +46,15 @@ import ListItemOrdered from './src/components/List/ListItemOrdered'
 import Progress from './src/components/Progress/Progress'
 import Search from './src/components/Search/Search'
 import Link from './src/components/Link/Link'
+import Tabs from './src/components/Tabs/Tabs'
+import ItemCard from './src/components/ItemCard/ItemCard'
+import PromoCard from './src/components/PromoCard/PromoCard'
+import Gallery from './src/components/Gallery/Gallery'
+import ComboBox from './src/components/ComboBox/ComboBox'
+import EmptyView from './src/components/EmptyView/EmptyView'
+import Bag from './src/components/Bag/Bag'
+import Message from './src/components/Message/Message'
+import ScrollView from './src/components/ScrollView/ScrollView'
 
 import Alert from './src/hoc/Alert/Alert'
 import { AlertProvider } from './src/hoc/Alert/AlertProvider'
@@ -59,18 +67,22 @@ import extend from 'lodash/extend'
 module.exports = extend({
   Banner,
   Button,
+  ButtonBig,
   ButtonSmall,
   BottomButtonView,
   CreditCardField,
   Table,
   TableRow,
   TableRowBase,
-  TableRowOrder,
+  TableRowBagItem,
   TableRowOrderItem,
   TableRowArrow,
   TableRowStore,
   TableRowOperation,
   TableRowGroup,
+  TableRowCheckbox,
+  TableRowRadio,
+  TableRowPath,
   TopImageView,
   TextField,
   TextFieldAddress,
@@ -78,11 +90,6 @@ module.exports = extend({
   TextSecondary,
   TextBase,
   TextBaseCenter,
-  TextH1,
-  TextH1Center,
-  TextH2,
-  TextH2Center,
-  TextH3,
   RemoteImage,
   StoreLogo,
   // SegmentedTab,
@@ -106,6 +113,15 @@ module.exports = extend({
   Progress,
   Search,
   Link,
+  Tabs,
+  ItemCard,
+  PromoCard,
+  Gallery,
+  ComboBox,
+  EmptyView,
+  Bag,
+  Message,
+  ScrollView,
 
   HOC: {
     Alert,

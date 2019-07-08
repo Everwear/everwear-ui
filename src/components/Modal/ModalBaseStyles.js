@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native'
-import { BORDER_RADIUS } from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
@@ -10,7 +9,7 @@ export default StyleSheet.create({
   },
   modal: {
     overflow: 'hidden',
-    borderRadius: BORDER_RADIUS,
+    borderRadius: 16,
     backgroundColor: '#f9f9f9',
     padding: 0,
     width: 270,

@@ -55,7 +55,7 @@ class Popup extends Component {
     }).start()
   }
 
-  close = () => {
+  close = (...args) => {
     const { pan } = this.state
     const { onClose } = this.props
 
@@ -65,7 +65,7 @@ class Popup extends Component {
       overshootClamping: true,
       speed: 30,
     }).start(() => {
-      onClose()
+      onClose(...args)
     })
   }
 
@@ -80,7 +80,9 @@ class Popup extends Component {
     return (
       <Modal
         transparent={true}
-        onRequestClose={this.close}
+        onRequestClose={() => {
+          this.close()
+        }}
         {...props}
       >
         <Animated.View
@@ -91,7 +93,11 @@ class Popup extends Component {
             })
           }]}
         >
-          <TouchableWithoutFeedback onPress={this.close}>
+          <TouchableWithoutFeedback
+            onPress={() => {
+              this.close()
+            }}
+          >
             <View style={$.outside}/>
           </TouchableWithoutFeedback>
           <Animated.View

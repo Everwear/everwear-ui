@@ -1,6 +1,7 @@
 import VMasker from 'vanilla-masker'
 import React, { Component } from 'react'
 import { TextInput, View, Text } from 'react-native'
+import { CLR_MANATEE } from '../../common/vars'
 import { cn } from '../../common/utils'
 import $ from './CreditCardFieldStyles'
 
@@ -25,6 +26,9 @@ class CreditCardField extends Component {
       onChangeNumber,
       onChangeExpiry,
       onChangeCVV,
+      testIDNumber,
+      testIDExpiry,
+      testIDCVV,
     } = this.props
 
     const {
@@ -54,8 +58,9 @@ class CreditCardField extends Component {
           <TextInput
             style={$.number}
             value={valueNumber}
+            testID={testIDNumber}
             autoFocus={true}
-            placeholderTextColor="#8d90a1"
+            placeholderTextColor={CLR_MANATEE}
             placeholder="Card number"
             keyboardType="numeric"
             maxLength={19}
@@ -74,6 +79,7 @@ class CreditCardField extends Component {
             keyboardType="numeric"
             placeholder="MM/YY"
             maxLength={5}
+            testID={testIDExpiry}
             onBlur={this.toggleFocus}
             onFocus={this.toggleFocus}
             onChangeText={(value) => {
@@ -92,6 +98,7 @@ class CreditCardField extends Component {
             keyboardType="numeric"
             placeholder="CVV"
             maxLength={4}
+            testID={testIDCVV}
             onBlur={this.toggleFocus}
             onFocus={this.toggleFocus}
             onChangeText={(valueCVV) => {

@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native'
-import { CLR_DIVIDER, BORDER_WIDTH } from '../../common/vars'
+import { CLR_DARK_BLUE, CLR_DIVIDER, BORDER_WIDTH } from '../../common/vars'
 import { TEXT_BASE } from '../../common/typography'
 
 export default StyleSheet.create({
   container: {
+    position: 'relative',
     zIndex: 100,
   },
   input: {
@@ -14,6 +15,7 @@ export default StyleSheet.create({
   },
   list: {
     position: 'absolute',
+    zIndex: 100,
     left: 0,
     right: 0,
     top: '100%',
@@ -26,6 +28,6 @@ export default StyleSheet.create({
   },
   listItemText: {
     ...TEXT_BASE,
-    color: '#717486',
+    color: CLR_DARK_BLUE,
   },
 })

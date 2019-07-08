@@ -7,9 +7,8 @@ const Alert = (WrappedComponent) => {
     static navigationOptions = WrappedComponent.navigationOptions
 
     showNetworkError = context => (error, title = '') => {
-      if (error instanceof Error) {
-        const msg = capitalize(error.message.toLowerCase()
-          .replace('graphql error: ', ''))
+      if ((error instanceof Error) && error.message.toLowerCase().includes('graphql error: ')) {
+        const msg = capitalize(error.message.toLowerCase() .replace('graphql error: ', ''))
         context.alertWithType('error', title, msg)
       }
     }
@@ -22,7 +21,7 @@ const Alert = (WrappedComponent) => {
       context.alertWithType('success', title, message)
     }
 
-    render () {
+    render() {
       return (
         <GlobalContext.Consumer>
           {(context) =>

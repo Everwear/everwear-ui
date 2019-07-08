@@ -30,7 +30,7 @@ export default ({
         }}
       >
         <Text style={$.buttonText}>
-          Close
+          OK
         </Text>
       </TouchableHighlight>
     </View>

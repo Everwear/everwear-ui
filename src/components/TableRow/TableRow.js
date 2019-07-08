@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import TableRowBase from './TableRowBase'
 import $ from './TableRowStyles'
 
@@ -12,6 +12,9 @@ const TableRow = ({
   textLabelStyle,
   textCaption,
   textCaptionStyle,
+  infoIconRed,
+  infoIconRedFilled,
+  onInfo,
   children,
   ...props
 }) => (
@@ -24,13 +27,48 @@ const TableRow = ({
       {!!text &&
         <View style={$.row}>
           <Text style={[$.text, textStyle]}>{text}</Text>
-          <Text style={[$.textValue, textValueStyle]}>{textValue}</Text>
+          <Text
+            style={[$.textValue, textValueStyle]}
+            numberOfLines={1}
+          >
+            {textValue}
+          </Text>
         </View>}
       {!!textCaption &&
         <Text style={[$.textCaption, textCaptionStyle]}>
           {textCaption}
         </Text>}
     </View>
+    {!!onInfo &&
+      <TouchableOpacity
+        hitSlop={{
+          top: 16,
+          left: 16,
+          bottom: 16,
+          right: 16,
+        }}
+        onPress={() => {
+          requestAnimationFrame(() => {
+            onInfo()
+          })
+        }}
+      >
+        {!infoIconRed && !infoIconRedFilled &&
+          <Image
+            source={require('./img/info.png')}
+            style={$.info}
+          />}
+        {infoIconRed &&
+          <Image
+            source={require('./img/info_red.png')}
+            style={$.info}
+          />}
+        {infoIconRedFilled &&
+          <Image
+            source={require('./img/info_red_filled.png')}
+            style={$.info}
+          />}
+      </TouchableOpacity>}
     {children}
   </TableRowBase>
 )

@@ -25,10 +25,12 @@ export default StyleSheet.create({
   image: {
     marginRight: 15,
     marginVertical: 12,
+    alignSelf: 'center',
   },
   imageView: {
     marginRight: 15,
     marginVertical: 12,
+    alignSelf: 'center',
   },
   wrap: {
     flex: 1,
@@ -45,5 +47,12 @@ export default StyleSheet.create({
   wrapBottomSep: {
     borderBottomColor: CLR_DIVIDER,
     borderBottomWidth: BORDER_WIDTH,
+  },
+  swipeout: {
+    backgroundColor: null,
+  },
+  footer: {
+    marginHorizontal: 20,
+    marginBottom: 12,
   },
 })

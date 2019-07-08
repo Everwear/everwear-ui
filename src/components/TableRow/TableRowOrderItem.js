@@ -1,29 +1,28 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import RemoteImage from '../RemoteImage/RemoteImage'
-import ButtonSmall from '../Button/ButtonSmall'
 import TableRowBase from './TableRowBase'
 import { cn } from '../../common/utils'
 import $ from './TableRowOrderItemStyles'
 
 const TableRowOrderItem = ({
-  item,
-  order,
-  onReturn,
-  onActions,
+  name,
+  size,
+  price,
+  photo,
+  status,
+  quantity,
+  otherItemsPhoto,
+  available,
   ...props
 }) => {
-  const orderStatus = order.status.name
-  const itemStatus = item.status.name
-
-  const isOrderReturnable = ['Expecting The Return', 'Delivered'].includes(orderStatus)
-  const isOrderComplete = ['Scheduled Return', 'Complete'].includes(orderStatus)
-  const isItemReturned = itemStatus === 'Returned'
-
   return (
     <TableRowBase
       {...props}
       fullWidthSep={true}
+      style={cn($, {
+        'inactive': !available || ['canceled', 'failed'].includes(status),
+      })}
       imageView={
         <View style={$.imageWrap}>
           <View style={$.imageOverlay}/>
@@ -31,33 +30,43 @@ const TableRowOrderItem = ({
             style={$.image}
             resizeMode="cover"
             source={{
-              uri: item.photo,
+              uri: photo,
             }}
           />
         </View>
       }
+      footerView={otherItemsPhoto && (
+        <View style={$.otherItems}>
+          {otherItemsPhoto.map((photo, i) =>
+            <RemoteImage
+              key={i}
+              style={$.otherItem}
+              resizeMode="cover"
+              source={{
+                uri: photo,
+              }}
+            />)}
+        </View>
+      )}
     >
       <View style={$.container}>
-        <Text style={$.title}>{item.name}</Text>
-        <Text style={$.size}>Size: {item.size}</Text>
+        <Text style={$.title} numberOfLines={3}>{name}</Text>
+        {available &&
+          <View style={$.row}>
+            <Text style={$.price}>${price}</Text>
+            {status !== 'paid' &&
+              <Text style={$.status}>
+                Not paid
+              </Text>}
+          </View>}
+        {!available &&
+          <View style={$.row}>
+            <Text style={$.price}>Not available</Text>
+          </View>}
         <View style={$.row}>
-          <Text style={$.price}>${item.price}</Text>
-          {isOrderComplete &&
-            <Text style={$.status}>
-              {item.status.name}
-            </Text>}
-          {itemStatus === 'Returned' &&
-            <Text style={[$.status, $.statusReturned]}>
-              Returned
-            </Text>}
-          {isOrderReturnable && !isItemReturned &&
-            <ButtonSmall onPress={onReturn}>
-              Return
-            </ButtonSmall>}
-          {isOrderReturnable && isItemReturned &&
-            <ButtonSmall onPress={onActions}>
-              ...
-            </ButtonSmall>}
+          <Text style={$.params} numberOfLines={1}>
+            Qty: {quantity} Size: {size}
+          </Text>
         </View>
       </View>
     </TableRowBase>

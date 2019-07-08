@@ -72,6 +72,7 @@ class TextFieldAddress extends Component {
   render () {
     const {
       style,
+      testID,
       autoFocus,
       placeholder,
     } = this.props
@@ -89,6 +90,7 @@ class TextFieldAddress extends Component {
           autoFocus={autoFocus}
           placeholder={placeholder}
           onChangeText={this.onChange}
+          testID={testID}
           value={value}
         />
         <View style={$.list}>
@@ -96,6 +98,7 @@ class TextFieldAddress extends Component {
             <TouchableHighlight
               key={item.id}
               style={$.listItem}
+              testID={`${testID}_item`}
               underlayColor="#dce0e3"
               onPress={() => {
                 requestAnimationFrame(() => {

@@ -1,0 +1,74 @@
+import React from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
+import RemoteImage from '../RemoteImage/RemoteImage'
+import ComboBox from '../ComboBox/ComboBox'
+import TableRowBase from './TableRowBase'
+import { CLR_RED } from '../../common/vars'
+import $ from './TableRowBagItemStyles'
+
+const TableRowBagItem = ({
+  name,
+  size,
+  price,
+  photo,
+  quantity,
+  onDelete,
+  onPressImage,
+  onChangeQuantity,
+  swipeoutOnScroll,
+  ...props
+}) => {
+  return (
+    <TableRowBase
+      {...props}
+      fullWidthSep={true}
+      imageView={
+        <TouchableOpacity
+          style={$.imageWrap}
+          onPress={onPressImage}
+        >
+          <View style={$.imageOverlay}/>
+          <RemoteImage
+            style={$.image}
+            resizeMode="cover"
+            source={{
+              uri: photo,
+            }}
+          />
+        </TouchableOpacity>
+      }
+      swipeoutOnScroll={swipeoutOnScroll}
+      swipeoutRight={[{
+        text: 'Delete',
+        type: 'delete',
+        backgroundColor: CLR_RED,
+        underlayColor: CLR_RED,
+        onPress: onDelete,
+      }]}
+    >
+      <View style={$.container}>
+        <Text style={$.title}>{name}</Text>
+        <View style={$.row}>
+          <Text style={$.price}>${Math.round(price * quantity * 100) / 100}</Text>
+          <Text style={$.label}>Pay later if you keep it</Text>
+        </View>
+        <View style={$.row}>
+          <ComboBox
+            style={$.qty}
+            onPress={onChangeQuantity}
+          >
+            Qty: {quantity}
+          </ComboBox>
+          <Text
+            style={$.size}
+            numberOfLines={1}
+          >
+            Size: {size}
+          </Text>
+        </View>
+      </View>
+    </TableRowBase>
+  )
+}
+
+export default TableRowBagItem

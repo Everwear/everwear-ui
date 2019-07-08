@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { TextInput, View, Text } from 'react-native'
+import { CLR_MANATEE } from '../../common/vars'
 import { cn } from '../../common/utils'
 import $ from './TextFieldStyles'
 
@@ -47,7 +48,7 @@ class TextField extends Component {
               this.toggleFocus()
               onFocus && onFocus(e)
             }}
-            placeholderTextColor="#8d90a1"
+            placeholderTextColor={CLR_MANATEE}
             style={$.input}
           />
         </View>

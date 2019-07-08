@@ -12,6 +12,7 @@ export default StyleSheet.create({
   },
   buttonWrap: {
     position: 'absolute',
+    zIndex: 100,
     bottom: 36,
     left: 0,
     right: 0,

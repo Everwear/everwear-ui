@@ -1,13 +1,11 @@
 import { StyleSheet } from 'react-native'
 import {
   TEXT_BASE,
-  TEXT_BASE_MEDIUM,
-  TEXT_VIBRANT,
+  TEXT_BASE_BOLD,
+  TEXT_VIBRATE,
 } from '../../common/typography'
 
 import {
-  SPG_S,
-  SPG_XS,
   BORDER_WIDTH,
   BORDER_RADIUS,
   CLR_DIVIDER,
@@ -22,19 +20,18 @@ export default StyleSheet.create({
   image: {
     width: 44,
     height: 44,
-    marginBottom: SPG_S,
+    marginBottom: 16,
     borderRadius: BORDER_RADIUS,
     resizeMode: 'contain',
   },
   text: {
-    ...TEXT_VIBRANT,
+    ...TEXT_VIBRATE,
     textAlign: 'center',
-    fontWeight: '600',
     color: '#000',
   },
   caption: {
     ...TEXT_BASE,
-    marginTop: SPG_XS,
+    marginTop: 8,
     textAlign: 'center',
     color: '#000',
   },
@@ -60,7 +57,7 @@ export default StyleSheet.create({
     color: '#087fff',
   },
   buttonTextBold: {
-    ...TEXT_BASE_MEDIUM,
+    ...TEXT_BASE_BOLD,
     textAlign: 'center',
     color: '#087fff',
   },

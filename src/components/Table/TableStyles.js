@@ -22,8 +22,6 @@ export default StyleSheet.create({
   footerWrap: {
     paddingTop: 8,
     marginHorizontal: 20,
-    borderTopWidth: BORDER_WIDTH,
-    borderTopColor: CLR_DIVIDER,
   },
   footer: {
     ...TEXT_FOOTNOTE,
