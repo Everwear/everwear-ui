@@ -61,4 +61,7 @@ export default StyleSheet.create({
     height: 66,
     width: 52,
   },
+  otherItemUnavailable: {
+    opacity: 0.3,
+  },
 })

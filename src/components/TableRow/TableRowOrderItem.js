@@ -12,7 +12,7 @@ const TableRowOrderItem = ({
   photo,
   status,
   quantity,
-  otherItemsPhoto,
+  otherItems,
   available,
   ...props
 }) => {
@@ -35,16 +35,19 @@ const TableRowOrderItem = ({
           />
         </View>
       }
-      footerView={otherItemsPhoto && (
+      footerView={otherItems && (
         <View style={$.otherItems}>
-          {otherItemsPhoto.map((photo, i) =>
+          {otherItems.map((item) =>
             <RemoteImage
-              key={i}
-              style={$.otherItem}
+              key={item.id}
               resizeMode="cover"
               source={{
-                uri: photo,
+                uri: item.uri,
               }}
+              style={cn($, {
+                'otherItem': true,
+                'otherItemUnavailable': !item.available,
+              })}
             />)}
         </View>
       )}
