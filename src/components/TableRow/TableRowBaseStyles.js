@@ -24,10 +24,12 @@ export default StyleSheet.create({
   },
   image: {
     marginRight: 15,
+    marginVertical: 12,
     alignSelf: 'center',
   },
   imageView: {
     marginRight: 15,
+    marginVertical: 12,
     alignSelf: 'center',
   },
   wrap: {

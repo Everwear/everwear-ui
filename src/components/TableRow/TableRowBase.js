@@ -84,11 +84,11 @@ const TableRowBase = ({
       <TouchableHighlight
         {...props}
         underlayColor="#dce0e3"
-        onPress={onPress && (() => {
+        onPress={() => {
           requestAnimationFrame(() => {
             onPress()
           })
-        })}
+        }}
       >
         {content}
       </TouchableHighlight>

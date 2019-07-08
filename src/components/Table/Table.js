@@ -43,11 +43,11 @@ class Table extends Component {
         <TouchableOpacity
           testID={testID}
           style={[$.container, style]}
-          onPress={onPress && (() => {
+          onPress={() => {
             requestAnimationFrame(() => {
               onPress()
             })
-          })}
+          }}
         >
           {content}
         </TouchableOpacity>
