@@ -15,12 +15,10 @@ const TableRowCheckbox = ({
     fullWidthSep={true}
     image={checked ? IMAGE_ON : IMAGE_OFF}
     onPress={disabled ? null : onPress}
-
+    style={disabled && {
+      opacity: 0.3,
+    }}
   />
 )
-
-// style={disabled && {
-//   opacity: 0.3,
-// }}
 
 export default TableRowCheckbox
