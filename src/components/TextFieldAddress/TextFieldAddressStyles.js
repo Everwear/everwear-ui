@@ -1,11 +1,11 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 import { CLR_DARK_BLUE, CLR_DIVIDER, BORDER_WIDTH } from '../../common/vars'
 import { TEXT_BASE } from '../../common/typography'
 
 export default StyleSheet.create({
   container: {
     position: 'relative',
-    zIndex: 100,
+    zIndex: Platform.OS === 'ios' ? 100 : undefined,
   },
   input: {
     width: '100%',
