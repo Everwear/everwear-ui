@@ -72,6 +72,7 @@ class Popup extends Component {
   render() {
     const {
       children,
+      fixScrollView,
       ...props
     } = this.props
 
@@ -100,17 +101,30 @@ class Popup extends Component {
           >
             <View style={$.outside}/>
           </TouchableWithoutFeedback>
-          <Animated.View
-            {...this.panResponder.panHandlers}
-            style={[$.modal, {
-              transform: pan.getTranslateTransform(),
-            }]}
-          >
-            <View style={$.bar}/>
-            <View style={$.content}>
-              {children}
-            </View>
-          </Animated.View>
+          {fixScrollView &&
+            <Animated.View
+              style={[$.modal, {
+                transform: pan.getTranslateTransform(),
+              }]}
+            >
+              <View style={$.bar} {...this.panResponder.panHandlers}/>
+              <View style={$.content}>
+                <View style={$.pan} {...this.panResponder.panHandlers}/>
+                {children}
+              </View>
+            </Animated.View>}
+          {!fixScrollView &&
+            <Animated.View
+              {...this.panResponder.panHandlers}
+              style={[$.modal, {
+                transform: pan.getTranslateTransform(),
+              }]}
+            >
+              <View style={$.bar}/>
+              <View style={$.content}>
+                {children}
+              </View>
+            </Animated.View>}
         </Animated.View>
       </Modal>
     )
