@@ -12,6 +12,11 @@ export default StyleSheet.create({
     left: 20,
     zIndex: 1,
   },
+  content: {
+    minWidth: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   image: {
     width: 300,
     height: 400,

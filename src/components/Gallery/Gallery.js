@@ -43,6 +43,7 @@ const Gallery = ({
       <ScrollView
         horizontal={true}
         style={[$.container, style]}
+        contentContainerStyle={$.content}
         showsHorizontalScrollIndicator={true}
       >
         {photos.map(({ url }, i) =>
