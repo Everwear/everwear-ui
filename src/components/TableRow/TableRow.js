@@ -16,26 +16,42 @@ const TableRow = ({
   infoIconRedFilled,
   onInfo,
   children,
+  testIDText,
+  testIDTextValue,
+  testIDTextCaption,
+  testIDTextLabel,
   ...props
 }) => (
   <TableRowBase {...props}>
     <View style={$.container}>
       {!!textLabel &&
-        <Text style={[$.textLabel, textLabelStyle]}>
+        <Text
+          style={[$.textLabel, textLabelStyle]}
+          testID={testIDTextLabel}
+        >
           {textLabel}
         </Text>}
       {!!text &&
         <View style={$.row}>
-          <Text style={[$.text, textStyle]}>{text}</Text>
+          <Text
+            style={[$.text, textStyle]}
+            testID={testIDText}
+          >
+            {text}
+          </Text>
           <Text
             style={[$.textValue, textValueStyle]}
+            testID={testIDTextValue}
             numberOfLines={1}
           >
             {textValue}
           </Text>
         </View>}
       {!!textCaption &&
-        <Text style={[$.textCaption, textCaptionStyle]}>
+        <Text
+          style={[$.textCaption, textCaptionStyle]}
+          testID={testIDTextCaption}
+        >
           {textCaption}
         </Text>}
     </View>
