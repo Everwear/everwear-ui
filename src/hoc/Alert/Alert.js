@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import { GlobalContext } from './AlertProvider'
-import capitalize from 'lodash/capitalize'
 
 const Alert = (WrappedComponent) => {
   return class HOC extends Component {
     static navigationOptions = WrappedComponent.navigationOptions
 
     showNetworkError = context => (error, title = '') => {
-      if ((error instanceof Error) && error.message.toLowerCase().includes('graphql error: ')) {
-        const msg = capitalize(error.message.toLowerCase() .replace('graphql error: ', ''))
-        context.alertWithType('error', title, msg)
+      console.log(error.message)
+      if ((error instanceof Error) && error.message.includes('GraphQL error: ')) {
+        context.alertWithType('error', title, error.message.replace('GraphQL error: ', ''))
       }
     }
 

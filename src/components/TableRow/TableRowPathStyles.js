@@ -51,6 +51,7 @@ export default StyleSheet.create({
   },
   text: {
     color: CLR_STORM_GREY,
+    maxWidth: '70%',
   },
   textCurrent: {
     ...TEXT_BASE_BOLD,
