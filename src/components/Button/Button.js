@@ -10,8 +10,6 @@ import {
 
 export default ({
   style = {},
-  theme,
-  selected,
   disabled,
   loading,
   onPress,
@@ -24,9 +22,7 @@ export default ({
     disabled={disabled}
     style={[cn($, {
       'container': true,
-      [`${theme}Container`]: !!theme,
-      'selectedContainer': selected,
-      'disabledContainer': disabled,
+      'containerDisabled': disabled,
     }), style]}
     {...props}
   >
@@ -42,9 +38,7 @@ export default ({
         testID={testIDText}
         style={cn($, {
           'label': true,
-          [`${theme}Label`]: !!theme,
-          'selectedLabel': selected,
-          'disabledLabel': disabled,
+          'labelDisabled': disabled,
         })}
       >
         {children}

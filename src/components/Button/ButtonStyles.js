@@ -10,13 +10,13 @@ export default StyleSheet.create({
     backgroundColor: CLR_DARK_BLUE,
     borderRadius: 24,
   },
+  containerDisabled: {
+    opacity: 0.1,
+  },
   label: {
     lineHeight: 48,
     color: CLR_PINK,
     fontFamily: 'WorkSans-SemiBold',
     fontSize: 16,
-  },
-  disabledContainer: {
-    backgroundColor: null,
   },
 })
