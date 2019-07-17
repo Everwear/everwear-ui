@@ -8,6 +8,7 @@ const TableRowCheckbox = ({
   checked,
   disabled,
   onPress,
+  style,
   ...props
 }) => (
   <TableRow
@@ -15,9 +16,9 @@ const TableRowCheckbox = ({
     fullWidthSep={true}
     image={checked ? IMAGE_ON : IMAGE_OFF}
     onPress={disabled ? null : onPress}
-    style={disabled && {
+    style={[disabled && {
       opacity: 0.3,
-    }}
+    }, style]}
   />
 )
 
