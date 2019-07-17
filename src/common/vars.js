@@ -10,5 +10,6 @@ export const CLR_BOMBAY = '#afb1b8'
 export const CLR_WHISPER = '#f5f4fa'
 export const CLR_ORANGE = '#fc6e51'
 export const CLR_GREEN = '#19d87c'
+export const CLR_BLUE = '#4c73ff'
 
 export const BORDER_WIDTH = StyleSheet.hairlineWidth

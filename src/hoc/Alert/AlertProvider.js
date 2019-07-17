@@ -30,6 +30,7 @@ class AlertProvider extends Component {
           ref={(ref) => {
             this.dropdown = ref
           }}
+          testID="alert"
           infoImageSrc={null}
           warnImageSrc={null}
           errorImageSrc={null}
