@@ -32,6 +32,7 @@ export default StyleSheet.create({
   },
   row: {
     width: '100%',
+    flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -40,6 +41,10 @@ export default StyleSheet.create({
   price: {
     ...TEXT_BASE,
   },
+  text: {
+    ...TEXT_BASE,
+    marginRight: 10,
+  },
   label: {
     ...TEXT_FOOTNOTE,
     lineHeight: 21,
@@ -47,10 +52,10 @@ export default StyleSheet.create({
   },
   qty: {
     width: '50%',
-    marginRight: 8,
   },
   size: {
     ...TEXT_BASE,
+    paddingLeft: 8,
     color: CLR_DARK_BLUE,
     width: '50%',
   },

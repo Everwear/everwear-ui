@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import RemoteImage from '../RemoteImage/RemoteImage'
 import ComboBox from '../ComboBox/ComboBox'
 import TableRowBase from './TableRowBase'
+import Link from '../Link/Link'
 import { CLR_RED } from '../../common/vars'
 import $ from './TableRowBagItemStyles'
 
@@ -12,6 +13,7 @@ const TableRowBagItem = ({
   price,
   photo,
   quantity,
+  available,
   onDelete,
   onPressImage,
   onChangeQuantity,
@@ -47,25 +49,45 @@ const TableRowBagItem = ({
       }]}
     >
       <View style={$.container}>
-        <Text style={$.title}>{name}</Text>
-        <View style={$.row}>
-          <Text style={$.price}>${Math.round(price * quantity * 100) / 100}</Text>
-          <Text style={$.label}>Pay later if you keep it</Text>
-        </View>
-        <View style={$.row}>
-          <ComboBox
-            style={$.qty}
-            onPress={onChangeQuantity}
-          >
-            Qty: {quantity}
-          </ComboBox>
-          <Text
-            style={$.size}
-            numberOfLines={1}
-          >
-            Size: {size}
-          </Text>
-        </View>
+        {!available &&
+          <View style={{ opacity: 0.5 }}>
+            <Text style={$.title}>{name}</Text>
+            <View style={$.row}>
+              <Text style={[$.text, { width: '100%' }]}>Not avaialbe</Text>
+              <Text style={$.text}>Qty: {quantity}</Text>
+              <Text style={$.text}>Size: {size}</Text>
+            </View>
+            <View style={$.row}>
+              <Link
+                color={CLR_RED}
+                onPress={onDelete}
+              >
+                Delete
+              </Link>
+            </View>
+          </View>}
+        {available &&
+          <>
+            <Text style={$.title}>{name}</Text>
+            <View style={$.row}>
+              <Text style={$.price}>${Math.round(price * quantity * 100) / 100}</Text>
+              <Text style={$.label}>Pay later if you keep it</Text>
+            </View>
+            <View style={$.row}>
+              <ComboBox
+                style={$.qty}
+                onPress={onChangeQuantity}
+              >
+                Qty: {quantity}
+              </ComboBox>
+              <Text
+                style={$.size}
+                numberOfLines={1}
+              >
+                Size: {size}
+              </Text>
+            </View>
+          </>}
       </View>
     </TableRowBase>
   )
