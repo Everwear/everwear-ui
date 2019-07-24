@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native'
-import { CLR_DARK_BLUE } from '../../common/vars'
+import {
+  CLR_MANATEE,
+  CLR_DARK_BLUE,
+} from '../../common/vars'
 import {
   TEXT_BASE,
   TEXT_SECONDARY,
@@ -21,12 +24,14 @@ export default StyleSheet.create({
   textValue: {
     ...TEXT_BASE,
     maxWidth: '50%',
+    color: CLR_MANATEE,
   },
   textLabel: {
     ...TEXT_BASE,
   },
   textCaption: {
     ...TEXT_SECONDARY,
+    color: CLR_MANATEE,
   },
   info: {
     marginLeft: 8,

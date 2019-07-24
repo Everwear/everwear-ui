@@ -39,7 +39,8 @@ const ItemCard = ({
         {price === undefined &&
           <>
             <Text style={$.text}>{category}</Text>
-            <Text style={$.text}>Seller: {storeName}</Text>
+            {storeName &&
+              <Text style={$.text}>Seller: {storeName}</Text>}
           </>}
       </View>
     </View>
