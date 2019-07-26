@@ -8,7 +8,6 @@ import {
 } from '../../common/vars'
 
 const IMAGE_WIDTH = (Dimensions.get('window').width - 54) / 2
-const IMAGE_HEIGHT = IMAGE_WIDTH * 1.30
 
 export default StyleSheet.create({
   container: {
@@ -18,8 +17,6 @@ export default StyleSheet.create({
     marginBottom: 16,
   },
   image: {
-    width: IMAGE_WIDTH,
-    height: IMAGE_HEIGHT,
     marginBottom: 12,
     borderRadius: 8,
     backgroundColor: CLR_WHISPER,

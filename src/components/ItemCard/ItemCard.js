@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-import RemoteImage from '../RemoteImage/RemoteImage'
+import ItemPhoto from '../ItemPhoto/ItemPhoto'
 import $ from './ItemCardStyles'
 
 const ItemCard = ({
@@ -21,9 +21,10 @@ const ItemCard = ({
     testID={testID}
   >
     <View>
-      <RemoteImage
+      <ItemPhoto
         style={$.image}
         source={{ uri: photo }}
+        resizeMode="contain"
       />
       <View>
         <Text style={$.title} numberOfLines={1}>{name}</Text>

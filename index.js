@@ -48,6 +48,7 @@ import Search from './src/components/Search/Search'
 import Link from './src/components/Link/Link'
 import Tabs from './src/components/Tabs/Tabs'
 import ItemCard from './src/components/ItemCard/ItemCard'
+import ItemPhoto from './src/components/ItemPhoto/ItemPhoto'
 import PromoCard from './src/components/PromoCard/PromoCard'
 import Gallery from './src/components/Gallery/Gallery'
 import ComboBox from './src/components/ComboBox/ComboBox'
@@ -115,6 +116,7 @@ module.exports = extend({
   Link,
   Tabs,
   ItemCard,
+  ItemPhoto,
   PromoCard,
   Gallery,
   ComboBox,

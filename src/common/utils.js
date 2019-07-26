@@ -43,6 +43,18 @@ export function U({
   )
 }
 
+export function B({
+  style,
+  children,
+  ...props
+}) {
+  return (
+    <Text {...props} style={[{fontFamily: 'WorkSans-SemiBold'}, style]}>
+      {children}
+    </Text>
+  )
+}
+
 export function dollarify(amount) {
   return `${amount < 0 ? '-' : '+'}$${Math.abs(amount)}`
 }
