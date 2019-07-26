@@ -21,11 +21,6 @@ export default StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.05)',
     borderRadius: 8,
   },
-  image: {
-    width: 100,
-    height: 128,
-    borderRadius: 8,
-  },
   title: {
     ...TEXT_BASE,
     color: CLR_DARK_BLUE,

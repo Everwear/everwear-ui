@@ -17,8 +17,4 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  image: {
-    width: 300,
-    height: 400,
-  },
 })

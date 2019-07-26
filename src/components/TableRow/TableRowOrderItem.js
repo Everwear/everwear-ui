@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import RemoteImage from '../RemoteImage/RemoteImage'
+import ItemPhoto from '../ItemPhoto/ItemPhoto'
 import TableRowBase from './TableRowBase'
 import { cn } from '../../common/utils'
 import $ from './TableRowOrderItemStyles'
@@ -26,9 +26,10 @@ const TableRowOrderItem = ({
       imageView={
         <View style={$.imageWrap}>
           <View style={$.imageOverlay}/>
-          <RemoteImage
+          <ItemPhoto
             style={$.image}
-            resizeMode="cover"
+            width={100}
+            height={128}
             source={{
               uri: photo,
             }}
@@ -38,9 +39,8 @@ const TableRowOrderItem = ({
       footerView={otherItems && (
         <View style={$.otherItems}>
           {otherItems.map((item) =>
-            <RemoteImage
+            <ItemPhoto
               key={item.id}
-              resizeMode="cover"
               source={{
                 uri: item.uri,
               }}

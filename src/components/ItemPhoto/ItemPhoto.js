@@ -7,13 +7,13 @@ import $, {
 } from './ItemPhotoStyles'
 
 class ItemPhoto extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.onLoad = this.onLoad.bind(this)
     this.state = {
       opacity: new Animated.Value(0),
-      height: CONTAINER_HEIGHT,
-      width: CONTAINER_WIDTH,
+      height: props.height || CONTAINER_HEIGHT,
+      width: props.width || CONTAINER_WIDTH,
     }
   }
 
@@ -45,7 +45,12 @@ class ItemPhoto extends Component {
     const { opacity, height, width } = this.state
 
     return (
-      <View style={[$.container, style]}>
+      <View
+        style={[$.container, style, {
+          width: props.width || CONTAINER_WIDTH,
+          height: props.height || CONTAINER_HEIGHT,
+        }]}
+      >
         <Animated.Image
           {...props}
           onLoad={this.onLoad}

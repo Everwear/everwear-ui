@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-import RemoteImage from '../RemoteImage/RemoteImage'
+import ItemPhoto from '../ItemPhoto/ItemPhoto'
 import ComboBox from '../ComboBox/ComboBox'
 import TableRowBase from './TableRowBase'
 import Link from '../Link/Link'
@@ -30,9 +30,9 @@ const TableRowBagItem = ({
           onPress={onPressImage}
         >
           <View style={$.imageOverlay}/>
-          <RemoteImage
-            style={$.image}
-            resizeMode="cover"
+          <ItemPhoto
+            width={100}
+            height={128}
             source={{
               uri: photo,
             }}

@@ -25,8 +25,6 @@ export default StyleSheet.create({
     borderRadius: 8,
   },
   image: {
-    width: 100,
-    height: 128,
     borderRadius: 8,
   },
   title: {

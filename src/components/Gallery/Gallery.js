@@ -7,6 +7,7 @@ import $ from './GalleryStyles'
 
 const Gallery = ({
   photos,
+  ratio,
   style,
 }) => {
   const [ isFullscreen, setFullscreen ] = useState(false)
@@ -55,8 +56,11 @@ const Gallery = ({
             }}
           >
             <RemoteImage
-              style={$.image}
               source={{ uri: url }}
+              style={{
+                height: 400,
+                width: 400 * (1 / ratio),
+              }}
             />
           </TouchableOpacity>)}
       </ScrollView>
