@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { View, Animated, Image } from 'react-native'
-// import { getPixelRGBA } from 'react-native-get-pixel'
 import $, {
   CONTAINER_WIDTH,
   CONTAINER_HEIGHT,
@@ -19,18 +18,14 @@ class ItemPhoto extends Component {
 
   onLoad() {
     const { source } = this.props
-    const { opacity, height } = this.state
+    const { opacity, width } = this.state
 
     Image.getSize(source.uri, async (w, h) => {
-      const r = height / h
-      const width = w * r
-
-      // const color = await getPixelRGBA('sample.png', 0, 0)
-
-      // console.log(color)
+      const r = h / w
+      const height = width * r
 
       this.setState({
-        width,
+        height,
       })
 
       Animated.timing(opacity, {

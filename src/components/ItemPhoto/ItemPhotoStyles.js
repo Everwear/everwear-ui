@@ -8,6 +8,7 @@ export default StyleSheet.create({
   container: {
     overflow: 'hidden',
     alignItems: 'center',
+    justifyContent: 'flex-start',
     backgroundColor: CLR_WHISPER,
   },
 })

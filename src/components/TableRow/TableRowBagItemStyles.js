@@ -1,6 +1,14 @@
 import { StyleSheet } from 'react-native'
-import { TEXT_BASE, TEXT_SECONDARY, TEXT_FOOTNOTE } from '../../common/typography'
-import { CLR_DARK_BLUE } from '../../common/vars'
+
+import {
+  TEXT_BASE,
+  TEXT_FOOTNOTE,
+} from '../../common/typography'
+
+import {
+  CLR_WHISPER,
+  CLR_DARK_BLUE,
+} from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
@@ -11,15 +19,9 @@ export default StyleSheet.create({
     width: 100,
     height: 128,
   },
-  imageOverlay: {
-    zIndex: 10,
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0,0,0,0.05)',
+  image: {
     borderRadius: 8,
+    backgroundColor: CLR_WHISPER,
   },
   title: {
     ...TEXT_BASE,

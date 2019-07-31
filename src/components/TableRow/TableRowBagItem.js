@@ -29,10 +29,10 @@ const TableRowBagItem = ({
           style={$.imageWrap}
           onPress={onPressImage}
         >
-          <View style={$.imageOverlay}/>
           <ItemPhoto
             width={100}
             height={128}
+            style={$.image}
             source={{
               uri: photo,
             }}

@@ -4,7 +4,6 @@ import {
   Text,
   View,
   TouchableHighlight,
-  ActivityIndicator,
   TextInput,
 } from 'react-native'
 
@@ -20,9 +19,14 @@ class ModalTextFieldBase extends Component {
     const {
       text,
       caption,
+      textDone = 'Done',
+      textCancel = 'Cancel',
+      autoCapitalize,
+      autoCorrect,
       keyboardType,
+      placeholder,
       onDone,
-      onCancel,
+      onClose,
     } = this.props
 
     const {
@@ -32,16 +36,16 @@ class ModalTextFieldBase extends Component {
     return (
       <>
         <View style={$.content}>
-          <Text style={$.text}>
-            {text}
-          </Text>
+          {text &&
+            <Text style={$.text}>{text}</Text>}
           {caption &&
-            <Text style={$.caption}>
-              {caption}
-            </Text>}
+            <Text style={$.caption}>{caption}</Text>}
           <TextInput
-            autoFocus
             style={$.input}
+            autoFocus={true}
+            autoCapitalize={autoCapitalize}
+            autoCorrect={autoCorrect}
+            placeholder={placeholder}
             keyboardType={keyboardType}
             onChangeText={(value) => {
               this.setState({
@@ -56,12 +60,12 @@ class ModalTextFieldBase extends Component {
             underlayColor="#dce0e3"
             onPress={() => {
               requestAnimationFrame(() => {
-                onCancel()
+                onClose()
               })
             }}
           >
             <Text style={$.buttonText}>
-              Cancel
+              {textCancel}
             </Text>
           </TouchableHighlight>
           <TouchableHighlight
@@ -74,7 +78,7 @@ class ModalTextFieldBase extends Component {
             }}
           >
             <Text style={[$.buttonText, { fontWeight: '600' }]}>
-              Done
+              {textDone}
             </Text>
           </TouchableHighlight>
         </View>

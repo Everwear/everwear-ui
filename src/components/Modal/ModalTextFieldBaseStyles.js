@@ -1,26 +1,19 @@
 import { StyleSheet } from 'react-native'
 import ModalStyles from './ModalStyles'
-import {
-  SPG_S,
-  SPG_XS,
-  FONT_FAMILY,
-  FONT_SIZE_SMALL,
-} from '../../common/vars'
+import { CLR_DARK_BLUE } from '../../common/vars'
 
 export default StyleSheet.flatten([ModalStyles, {
-  spinner: {
-    marginTop: SPG_S,
-  },
   input: {
-    marginTop: SPG_S,
-    paddingHorizontal: SPG_XS,
+    marginTop: 16,
+    paddingHorizontal: 10,
+    height: 42,
     width: '100%',
-    height: 30,
+    fontSize: 16,
+    color: CLR_DARK_BLUE,
+    fontFamily: 'WorkSans-Regular',
     backgroundColor: '#fff',
     borderColor: '#979797',
     borderRadius: 5,
     borderWidth: 1,
-    fontFamily: FONT_FAMILY,
-    fontSize: FONT_SIZE_SMALL,
   },
 }])
