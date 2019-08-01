@@ -23,7 +23,10 @@ const ItemCard = ({
     <View>
       <ItemPhoto
         style={$.image}
-        source={{ uri: photo }}
+        source={{
+          uri: photo,
+          cache: 'force-cache',
+        }}
         resizeMode="contain"
       />
       <View>
