@@ -23,6 +23,7 @@ class ModalTextFieldBase extends Component {
       textCancel = 'Cancel',
       autoCapitalize,
       autoCorrect,
+      toUpperCase,
       keyboardType,
       placeholder,
       onDone,
@@ -41,6 +42,7 @@ class ModalTextFieldBase extends Component {
           {caption &&
             <Text style={$.caption}>{caption}</Text>}
           <TextInput
+            value={value}
             style={$.input}
             autoFocus={true}
             autoCapitalize={autoCapitalize}
@@ -49,7 +51,7 @@ class ModalTextFieldBase extends Component {
             keyboardType={keyboardType}
             onChangeText={(value) => {
               this.setState({
-                value,
+                value: toUpperCase ? value.toUpperCase() : value,
               })
             }}
           />
@@ -77,7 +79,7 @@ class ModalTextFieldBase extends Component {
               })
             }}
           >
-            <Text style={[$.buttonText, { fontWeight: '600' }]}>
+            <Text style={[$.buttonText, $.buttonTextBold]}>
               {textDone}
             </Text>
           </TouchableHighlight>
