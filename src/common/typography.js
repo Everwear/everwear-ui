@@ -41,6 +41,7 @@ export const TEXT_SECONDARY_BOLD = {
 export const TEXT_FOOTNOTE = {
   fontSize: 12,
   fontFamily: 'WorkSans-Regular',
+  lineHeight: 14,
   color: CLR_MANATEE,
 }
 

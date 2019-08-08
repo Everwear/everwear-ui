@@ -9,6 +9,7 @@ const ItemCard = ({
   category,
   photo,
   price,
+  ratio,
   originalPrice,
   style,
   onPress,
@@ -23,6 +24,7 @@ const ItemCard = ({
     <View>
       <ItemPhoto
         style={$.image}
+        ratio={ratio}
         source={{
           uri: photo,
           cache: 'force-cache',

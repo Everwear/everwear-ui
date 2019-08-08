@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
-import { TEXT_BASE, TEXT_SECONDARY, TEXT_FOOTNOTE } from '../../common/typography'
-import { CLR_DARK_BLUE } from '../../common/vars'
+import { TEXT_BASE, TEXT_FOOTNOTE } from '../../common/typography'
+import { CLR_DARK_BLUE, CLR_ORANGE, CLR_GREEN, CLR_RED } from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
@@ -46,6 +46,24 @@ export default StyleSheet.create({
     ...TEXT_FOOTNOTE,
     lineHeight: 21,
     marginLeft: 5,
+  },
+  statusOrange: {
+    ...TEXT_FOOTNOTE,
+    lineHeight: 21,
+    marginLeft: 5,
+    color: CLR_ORANGE,
+  },
+  statusRed: {
+    ...TEXT_FOOTNOTE,
+    lineHeight: 21,
+    marginLeft: 5,
+    color: CLR_RED,
+  },
+  statusGreen: {
+    ...TEXT_FOOTNOTE,
+    lineHeight: 21,
+    marginLeft: 5,
+    color: CLR_GREEN,
   },
   params: {
     ...TEXT_BASE,

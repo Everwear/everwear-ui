@@ -39,13 +39,14 @@ const TableRow = ({
           >
             {text}
           </Text>
-          <Text
-            style={[$.textValue, textValueStyle]}
-            testID={testIDTextValue}
-            numberOfLines={1}
-          >
-            {textValue}
-          </Text>
+          {!!textValue &&
+            <Text
+              style={[$.textValue, textValueStyle]}
+              testID={testIDTextValue}
+              numberOfLines={1}
+            >
+              {textValue}
+            </Text>}
         </View>}
       {!!textCaption &&
         <Text

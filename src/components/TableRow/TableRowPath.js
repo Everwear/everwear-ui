@@ -18,10 +18,10 @@ const TableRowArrow = ({
   return (
     <TableRow
       {...props}
-      textStyle={[textStyle, cn($, {
+      textStyle={[cn($, {
         'text': true,
         'textCurrent': current,
-      })]}
+      }), textStyle]}
       imageViewStyle={$.container}
       imageView={
         <>

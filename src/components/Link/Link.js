@@ -4,6 +4,7 @@ import $ from './LinkStyles'
 
 const Link = ({
   style,
+  styleText,
   onPress,
   color = '#4c73ff',
   children,
@@ -21,7 +22,7 @@ const Link = ({
     <Text
       style={[$.text, {
         color,
-      }]}
+      }, styleText]}
     >
       {children}
     </Text>

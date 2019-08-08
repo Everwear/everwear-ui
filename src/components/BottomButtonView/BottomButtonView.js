@@ -30,6 +30,7 @@ class BottomButtonView extends Component {
       buttonLoading,
       refreshControl,
       buttonVisible = true,
+      buttonDisabled,
       avoidKeyboardScrollView,
       avoidKeyboard,
       children,
@@ -81,6 +82,7 @@ class BottomButtonView extends Component {
               loading={buttonLoading}
               testID={testIDButton}
               testIDText={testIDButtonText}
+              disabled={buttonDisabled}
               onPress={() => {
                 requestAnimationFrame(() => {
                   buttonOnPress()

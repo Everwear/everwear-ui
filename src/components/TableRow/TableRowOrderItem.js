@@ -10,10 +10,12 @@ const TableRowOrderItem = ({
   size,
   price,
   photo,
-  status,
+  orderStatus,
+  returnStatus,
   quantity,
   otherItems,
   available,
+  children,
   ...props
 }) => {
   return (
@@ -21,7 +23,7 @@ const TableRowOrderItem = ({
       {...props}
       fullWidthSep={true}
       style={cn($, {
-        'inactive': !available || ['canceled', 'failed'].includes(status),
+        'inactive': !available || ['canceled', 'failed'].includes(orderStatus),
       })}
       imageView={
         <View style={$.imageWrap}>
@@ -57,9 +59,21 @@ const TableRowOrderItem = ({
         {available &&
           <View style={$.row}>
             <Text style={$.price}>${price}</Text>
-            {status !== 'paid' &&
+            {!returnStatus && orderStatus && orderStatus !== 'paid' &&
               <Text style={$.status}>
                 Not paid
+              </Text>}
+            {returnStatus === 'PENDING' &&
+              <Text style={$.statusOrange}>
+                Return pending
+              </Text>}
+            {returnStatus === 'NOT_RETURNABLE' &&
+              <Text style={$.statusRed}>
+                Not returnable
+              </Text>}
+            {returnStatus === 'RETURNED' &&
+              <Text style={$.statusGreen}>
+                Rerturned
               </Text>}
           </View>}
         {!available &&
@@ -72,6 +86,7 @@ const TableRowOrderItem = ({
           </Text>
         </View>
       </View>
+      {children}
     </TableRowBase>
   )
 }

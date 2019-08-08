@@ -19,7 +19,8 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    width: 195,
+    minWidth: 195,
+    maxWidth: 240,
   },
   kbaView: {
     flex: 1,
