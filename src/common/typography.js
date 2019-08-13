@@ -14,7 +14,6 @@ export const TEXT_VIBRATE = {
 export const TEXT_BASE = {
   fontSize: 16,
   fontFamily: 'WorkSans-Regular',
-  letterSpacing: -0.1,
   lineHeight: 21,
   color: CLR_STORM_GREY,
 }

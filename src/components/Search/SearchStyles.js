@@ -9,7 +9,6 @@ export default StyleSheet.create({
     paddingHorizontal: 20,
     fontSize: 16,
     fontFamily: 'WorkSans-Regular',
-    letterSpacing: -0.2,
     backgroundColor: CLR_WHISPER,
     borderRadius: 16,
     color: CLR_DARK_BLUE,

@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { TEXT_BASE_BOLD } from '../../common/typography'
 import {
-  CLR_ORANGE,
   CLR_STORM_GREY,
   CLR_DARK_BLUE,
   CLR_DIVIDER
@@ -25,7 +24,7 @@ export default StyleSheet.create({
     borderRadius: 6,
   },
   circleCurrent: {
-    backgroundColor: CLR_ORANGE,
+    backgroundColor: CLR_DARK_BLUE,
   },
   line: {
     position: 'absolute',
@@ -43,10 +42,10 @@ export default StyleSheet.create({
     bottom: '50%',
   },
   linePassed: {
-    backgroundColor: CLR_ORANGE,
+    backgroundColor: CLR_DARK_BLUE,
   },
   lineCurrent: {
-    backgroundColor: CLR_ORANGE,
+    backgroundColor: CLR_DARK_BLUE,
     bottom: '50%',
   },
   text: {

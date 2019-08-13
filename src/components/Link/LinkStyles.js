@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { TEXT_BASE } from '../../common/typography'
+import { CLR_BLUE } from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
@@ -7,6 +8,6 @@ export default StyleSheet.create({
   },
   text: {
     ...TEXT_BASE,
-    color: '#4c73ff',
+    color: CLR_BLUE,
   },
 })
