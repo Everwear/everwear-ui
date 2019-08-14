@@ -61,7 +61,7 @@ const TableRowOrderItem = ({
             <Text style={$.price}>${price}</Text>
             {!returnStatus && orderStatus && orderStatus !== 'paid' &&
               <Text style={$.status}>
-                Not paid
+                Pay later if you keep it
               </Text>}
             {returnStatus === 'PENDING' &&
               <Text style={$.statusOrange}>
