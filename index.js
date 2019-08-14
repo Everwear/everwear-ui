@@ -57,6 +57,7 @@ import Bag from './src/components/Bag/Bag'
 import Message from './src/components/Message/Message'
 import ScrollView from './src/components/ScrollView/ScrollView'
 import Checkbox from './src/components/Checkbox/Checkbox'
+import Markdown from './src/components/Markdown/Markdown'
 
 import Alert from './src/hoc/Alert/Alert'
 import { AlertProvider } from './src/hoc/Alert/AlertProvider'
@@ -126,6 +127,7 @@ module.exports = extend({
   Message,
   ScrollView,
   Checkbox,
+  Markdown,
 
   HOC: {
     Alert,
