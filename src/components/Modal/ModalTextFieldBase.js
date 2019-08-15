@@ -23,7 +23,6 @@ class ModalTextFieldBase extends Component {
       textCancel = 'Cancel',
       autoCapitalize,
       autoCorrect,
-      toUpperCase,
       keyboardType,
       placeholder,
       onDone,
@@ -51,7 +50,7 @@ class ModalTextFieldBase extends Component {
             keyboardType={keyboardType}
             onChangeText={(value) => {
               this.setState({
-                value: toUpperCase ? value.toUpperCase() : value,
+                value,
               })
             }}
           />
