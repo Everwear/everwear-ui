@@ -14,6 +14,7 @@ const TableRow = ({
   textCaptionStyle,
   infoIconRed,
   infoIconRedFilled,
+  infoIconOrange,
   onInfo,
   children,
   testIDText,
@@ -70,7 +71,9 @@ const TableRow = ({
           })
         }}
       >
-        {!infoIconRed && !infoIconRedFilled &&
+        {!infoIconRed &&
+        !infoIconRedFilled &&
+        !infoIconOrange &&
           <Image
             source={require('./img/info.png')}
             style={$.info}
@@ -78,6 +81,11 @@ const TableRow = ({
         {infoIconRed &&
           <Image
             source={require('./img/info_red.png')}
+            style={$.info}
+          />}
+        {infoIconOrange &&
+          <Image
+            source={require('./img/info_orange.png')}
             style={$.info}
           />}
         {infoIconRedFilled &&

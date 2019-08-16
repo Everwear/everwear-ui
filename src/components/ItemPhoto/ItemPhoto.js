@@ -18,14 +18,20 @@ class ItemPhoto extends Component {
 
   onLoad() {
     const { source } = this.props
-    const { opacity, width } = this.state
+    const { opacity, width, height } = this.state
 
     Image.getSize(source.uri, async (w, h) => {
-      const r = h / w
-      const height = width * r
+      let newHeight = width * (h / w)
+      let newWidth = width
+
+      if (newHeight < height) {
+        newWidth += (height - newHeight) * (w / h)
+        newHeight = height
+      }
 
       this.setState({
-        height,
+        height: newHeight,
+        width: newWidth,
       })
 
       Animated.timing(opacity, {

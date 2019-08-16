@@ -23,7 +23,6 @@ import TextBase from './src/components/Text/TextBase'
 import TextBaseCenter from './src/components/Text/TextBaseCenter'
 import RemoteImage from './src/components/RemoteImage/RemoteImage'
 import StoreLogo from './src/components/StoreLogo/StoreLogo'
-// import SegmentedTab from './src/components/SegmentedTab/SegmentedTab'
 import Seporator from './src/components/Seporator/Seporator'
 import BottomButtonView from './src/components/BottomButtonView/BottomButtonView'
 import TopImageView from './src/components/TopImageView/TopImageView'
@@ -58,6 +57,7 @@ import Message from './src/components/Message/Message'
 import ScrollView from './src/components/ScrollView/ScrollView'
 import Checkbox from './src/components/Checkbox/Checkbox'
 import Markdown from './src/components/Markdown/Markdown'
+import CardImageLeft from './src/components/CardImageLeft/CardImageLeft'
 
 import Alert from './src/hoc/Alert/Alert'
 import { AlertProvider } from './src/hoc/Alert/AlertProvider'
@@ -95,7 +95,6 @@ module.exports = extend({
   TextBaseCenter,
   RemoteImage,
   StoreLogo,
-  // SegmentedTab,
   SpinnerView,
   Seporator,
   ModalBase,
@@ -128,6 +127,7 @@ module.exports = extend({
   ScrollView,
   Checkbox,
   Markdown,
+  CardImageLeft,
 
   HOC: {
     Alert,
