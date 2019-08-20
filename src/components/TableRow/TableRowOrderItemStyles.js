@@ -65,8 +65,9 @@ export default StyleSheet.create({
     marginLeft: 5,
     color: CLR_GREEN,
   },
-  params: {
+  param: {
     ...TEXT_BASE,
+    marginRight: 10,
   },
   otherItems: {
     flexDirection: 'row',

@@ -81,9 +81,8 @@ const TableRowOrderItem = ({
             <Text style={$.price}>Not available</Text>
           </View>}
         <View style={$.row}>
-          <Text style={$.params} numberOfLines={1}>
-            Qty: {quantity} Size: {size}
-          </Text>
+          <Text style={$.param}>Qty: {quantity}</Text>
+          <Text style={$.param}>Size: {size}</Text>
         </View>
       </View>
       {children}

@@ -61,6 +61,11 @@ class ItemPhoto extends Component {
             width,
           }]}
         />
+        <Animated.View
+          style={[$.overlay, {
+            opacity,
+          }]}
+        />
       </View>
     )
   }
