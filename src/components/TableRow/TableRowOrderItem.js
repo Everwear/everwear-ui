@@ -59,7 +59,7 @@ const TableRowOrderItem = ({
         {available &&
           <View style={$.row}>
             <Text style={$.price}>${price}</Text>
-            {!returnStatus && orderStatus && orderStatus !== 'paid' &&
+            {!returnStatus && orderStatus && !['paid', 'canceled'].includes(orderStatus) &&
               <Text style={$.status}>
                 Pay later if you keep it
               </Text>}

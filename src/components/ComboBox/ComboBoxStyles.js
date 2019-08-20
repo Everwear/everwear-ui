@@ -6,7 +6,7 @@ export default StyleSheet.create({
   container: {
     height: 48,
     paddingLeft: 24,
-    paddingRight: 30,
+    paddingRight: 36,
     borderRadius: 24,
     backgroundColor: CLR_WHISPER,
     justifyContent: 'center',
