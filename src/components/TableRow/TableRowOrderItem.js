@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import ItemPhoto from '../ItemPhoto/ItemPhoto'
 import TableRowBase from './TableRowBase'
-import { cn } from '../../common/utils'
+import { cn, _00 } from '../../common/utils'
 import $ from './TableRowOrderItemStyles'
 
 const TableRowOrderItem = ({
@@ -58,7 +58,7 @@ const TableRowOrderItem = ({
         <Text style={$.title} numberOfLines={3}>{name}</Text>
         {available &&
           <View style={$.row}>
-            <Text style={$.price}>${price}</Text>
+            <Text style={$.price}>${_00(Math.round(price * quantity * 100) / 100)}</Text>
             {!returnStatus && orderStatus && !['paid', 'canceled'].includes(orderStatus) &&
               <Text style={$.status}>
                 Pay later if you keep it

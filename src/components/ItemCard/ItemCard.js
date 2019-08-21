@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import ItemPhoto from '../ItemPhoto/ItemPhoto'
+import { _00 } from '../../common/utils'
 import $ from './ItemCardStyles'
 
 const ItemCard = ({
@@ -38,8 +39,8 @@ const ItemCard = ({
             {originalPrice ? null : `$${price}`}
             {originalPrice &&
               <>
-                <Text style={$.priceSale}>${price}{' '}</Text>
-                <Text style={$.priceOriginal}>${originalPrice}</Text>
+                <Text style={$.priceSale}>${_00(price)}{' '}</Text>
+                <Text style={$.priceOriginal}>${_00(originalPrice)}</Text>
               </>}
           </Text>}
         {price === undefined &&

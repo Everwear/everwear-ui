@@ -5,6 +5,7 @@ import ComboBox from '../ComboBox/ComboBox'
 import TableRowBase from './TableRowBase'
 import Link from '../Link/Link'
 import { CLR_RED } from '../../common/vars'
+import { _00 } from '../../common/utils'
 import $ from './TableRowBagItemStyles'
 
 const TableRowBagItem = ({
@@ -70,7 +71,7 @@ const TableRowBagItem = ({
           <>
             <Text style={$.title}>{name}</Text>
             <View style={$.row}>
-              <Text style={$.price}>${Math.round(price * quantity * 100) / 100}</Text>
+              <Text style={$.price}>${_00(Math.round(price * quantity * 100) / 100)}</Text>
               <Text style={$.label}>Pay later if you keep it</Text>
             </View>
             <View style={$.row}>
