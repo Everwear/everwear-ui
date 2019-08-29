@@ -9,7 +9,9 @@ const TableRowOrderItem = ({
   name,
   size,
   price,
+  originalPrice,
   photo,
+  ratio,
   orderStatus,
   returnStatus,
   quantity,
@@ -32,6 +34,7 @@ const TableRowOrderItem = ({
             style={$.image}
             width={100}
             height={128}
+            ratio={ratio}
             source={{
               uri: photo,
             }}
@@ -57,25 +60,36 @@ const TableRowOrderItem = ({
       <View style={$.container}>
         <Text style={$.title} numberOfLines={3}>{name}</Text>
         {available &&
-          <View style={$.row}>
-            <Text style={$.price}>${_00(Math.round(price * quantity * 100) / 100)}</Text>
-            {!returnStatus && orderStatus && !['paid', 'canceled'].includes(orderStatus) &&
-              <Text style={$.status}>
-                Pay later if you keep it
-              </Text>}
-            {returnStatus === 'PENDING' &&
-              <Text style={$.statusOrange}>
-                Return pending
-              </Text>}
-            {returnStatus === 'NOT_RETURNABLE' &&
-              <Text style={$.statusRed}>
-                Not returnable
-              </Text>}
-            {returnStatus === 'RETURNED' &&
-              <Text style={$.statusGreen}>
-                Rerturned
-              </Text>}
-          </View>}
+          <>
+            <View style={$.row}>
+              <Text style={$.price}>
+                {originalPrice ? null : `$${_00(Math.round(price * quantity * 100) / 100)}`}
+                {originalPrice &&
+                  <>
+                    <Text style={$.priceSale}>${_00(Math.round(price * quantity * 100) / 100)}{' '}</Text>
+                    <Text style={$.priceOriginal}>${_00(Math.round(originalPrice * quantity * 100) / 100)}</Text>
+                  </>}
+              </Text>
+            </View>
+            <View style={$.row}>
+              {!returnStatus && orderStatus && !['paid', 'canceled'].includes(orderStatus) &&
+                <Text style={$.status}>
+                  Pay later if you keep it
+                </Text>}
+              {returnStatus === 'PENDING' &&
+                <Text style={$.statusOrange}>
+                  Return pending
+                </Text>}
+              {returnStatus === 'NOT_RETURNABLE' &&
+                <Text style={$.statusRed}>
+                  Not returnable
+                </Text>}
+              {returnStatus === 'RETURNED' &&
+                <Text style={$.statusGreen}>
+                  Rerturned
+                </Text>}
+            </View>
+          </>}
         {!available &&
           <View style={$.row}>
             <Text style={$.price}>Not available</Text>

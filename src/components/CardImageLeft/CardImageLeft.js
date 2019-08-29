@@ -6,6 +6,7 @@ import $ from './CardImageLeftStyles'
 const CardImageLeft = ({
   text,
   image,
+  ratio,
   style,
   testID,
   onPress,
@@ -25,7 +26,7 @@ const CardImageLeft = ({
       style={$.image}
       height={120}
       width={120}
-      resizeMode="contain"
+      ratio={ratio}
       source={image}
     />
     <View style={$.content}>

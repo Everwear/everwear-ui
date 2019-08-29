@@ -30,7 +30,6 @@ const ItemCard = ({
           uri: photo,
           cache: 'force-cache',
         }}
-        resizeMode="contain"
       />
       <View>
         <Text style={$.title} numberOfLines={1}>{name}</Text>

@@ -8,11 +8,16 @@ import {
 import {
   CLR_WHISPER,
   CLR_DARK_BLUE,
+  CLR_ORANGE,
+  CLR_MANATEE,
 } from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
     flex: 1,
+    alignSelf: 'flex-start',
+  },
+  imageView: {
     alignSelf: 'flex-start',
   },
   imageWrap: {
@@ -37,6 +42,14 @@ export default StyleSheet.create({
   },
   price: {
     ...TEXT_BASE,
+    width: '100%',
+  },
+  priceSale: {
+    color: CLR_ORANGE,
+  },
+  priceOriginal: {
+    textDecorationLine: 'line-through',
+    color: CLR_MANATEE,
   },
   text: {
     ...TEXT_BASE,
@@ -44,8 +57,6 @@ export default StyleSheet.create({
   },
   label: {
     ...TEXT_FOOTNOTE,
-    lineHeight: 21,
-    marginLeft: 5,
   },
   qty: {
     width: '50%',

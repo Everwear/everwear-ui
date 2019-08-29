@@ -12,7 +12,9 @@ const TableRowBagItem = ({
   name,
   size,
   price,
+  originalPrice,
   photo,
+  ratio,
   quantity,
   available,
   onDelete,
@@ -25,6 +27,7 @@ const TableRowBagItem = ({
     <TableRowBase
       {...props}
       fullWidthSep={true}
+      imageViewStyle={$.imageView}
       imageView={
         <TouchableOpacity
           style={$.imageWrap}
@@ -33,6 +36,7 @@ const TableRowBagItem = ({
           <ItemPhoto
             width={100}
             height={128}
+            ratio={ratio}
             style={$.image}
             source={{
               uri: photo,
@@ -52,7 +56,7 @@ const TableRowBagItem = ({
       <View style={$.container}>
         {!available &&
           <View style={{ opacity: 0.5 }}>
-            <Text style={$.title}>{name}</Text>
+            <Text style={$.title} numberOfLines={3}>{name}</Text>
             <View style={$.row}>
               <Text style={[$.text, { width: '100%' }]}>Not avaialbe</Text>
               <Text style={$.text}>Qty: {quantity}</Text>
@@ -69,9 +73,16 @@ const TableRowBagItem = ({
           </View>}
         {available &&
           <>
-            <Text style={$.title}>{name}</Text>
+            <Text style={$.title} numberOfLines={3}>{name}</Text>
             <View style={$.row}>
-              <Text style={$.price}>${_00(Math.round(price * quantity * 100) / 100)}</Text>
+              <Text style={$.price}>
+                {originalPrice ? null : `$${_00(Math.round(price * quantity * 100) / 100)}`}
+                {originalPrice &&
+                  <>
+                    <Text style={$.priceSale}>${_00(Math.round(price * quantity * 100) / 100)}{' '}</Text>
+                    <Text style={$.priceOriginal}>${_00(Math.round(originalPrice * quantity * 100) / 100)}</Text>
+                  </>}
+              </Text>
               <Text style={$.label}>Pay later if you keep it</Text>
             </View>
             <View style={$.row}>

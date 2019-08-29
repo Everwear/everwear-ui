@@ -4,7 +4,7 @@ import { CLR_PINK, CLR_DARK_BLUE } from '../../common/vars'
 export default StyleSheet.create({
   container: {
     height: 48,
-    paddingHorizontal: 20,
+    paddingHorizontal: 36,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: CLR_DARK_BLUE,
