@@ -35,7 +35,8 @@ export default StyleSheet.create({
   },
   info: {
     marginLeft: 8,
-    height: 24,
+    resizeMode: 'center',
+    height: 20,
     width: 24,
   },
 })

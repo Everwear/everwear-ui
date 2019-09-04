@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { CLR_DARK_BLUE } from '../../common/vars'
+import { CLR_DARK_BLUE, CLR_BOMBAY } from '../../common/vars'
 
 export default StyleSheet.create({
   container: {
@@ -21,5 +21,8 @@ export default StyleSheet.create({
     fontFamily: 'WorkSans-Regular',
     lineHeight: 21,
     color: CLR_DARK_BLUE,
+  },
+  textDisabled: {
+    color: CLR_BOMBAY,
   },
 })

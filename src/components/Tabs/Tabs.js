@@ -11,9 +11,10 @@ const Tabs = ({
 }) => (
   <View style={[$.container, style]}>
     {options.map((tab) =>
-      <TouchableOpacity
+      <TabWrap
+        tab={tab}
         key={tab.text}
-        onPress={() => {
+        onChange={() => {
           onChange(tab.value)
         }}
       >
@@ -24,11 +25,33 @@ const Tabs = ({
               'tabSelected': tab.value === value,
             })}
           >
-            <Text style={$.text}>{tab.text}</Text>
+            <Text
+              style={cn($, {
+                'text': true,
+                'textDisabled': tab.disabled,
+              })}
+            >
+              {tab.text}
+            </Text>
           </View>
         </View>
-      </TouchableOpacity>)}
+      </TabWrap>)}
   </View>
 )
+
+const TabWrap = ({
+  tab,
+  onChange,
+  children,
+}) => {
+  if (tab.disabled) {
+    return children
+  }
+  return (
+    <TouchableOpacity onPress={onChange}>
+      {children}
+    </TouchableOpacity>
+  )
+}
 
 export default Tabs
