@@ -6,7 +6,6 @@ const Alert = (WrappedComponent) => {
     static navigationOptions = WrappedComponent.navigationOptions
 
     showNetworkError = context => (error, title = '') => {
-      console.log(error.message)
       if ((error instanceof Error) && error.message.includes('GraphQL error: ')) {
         context.alertWithType('error', title, error.message.replace('GraphQL error: ', ''))
       }

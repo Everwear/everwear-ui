@@ -44,6 +44,7 @@ class ModalTextFieldBase extends Component {
             value={value}
             style={$.input}
             autoFocus={true}
+            underlineColorAndroid="transparent"
             autoCapitalize={autoCapitalize}
             autoCorrect={autoCorrect}
             placeholder={placeholder}

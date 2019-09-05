@@ -40,13 +40,15 @@ class AlertProvider extends Component {
           infoColor="#afb1b8"
           titleStyle={{
             textAlign: 'center',
-            fontFamily: 'WorkSans-Semibold',
+            fontFamily: 'WorkSans-SemiBold',
+            fontWeight: null,
             fontSize: 14,
             color: '#fff',
           }}
           messageStyle={{
             textAlign: 'center',
-            fontFamily: 'WorkSans-Semibold',
+            fontFamily: 'WorkSans-SemiBold',
+            fontWeight: null,
             fontSize: 14,
             color: '#fff',
           }}

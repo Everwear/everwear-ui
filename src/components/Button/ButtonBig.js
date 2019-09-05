@@ -13,7 +13,6 @@ const ButtonBig = ({
   style = {},
   text,
   label,
-  theme,
   selected,
   disabled,
   loading,

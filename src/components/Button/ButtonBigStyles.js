@@ -10,6 +10,9 @@ export default StyleSheet.create({
     backgroundColor: CLR_DARK_BLUE,
     borderRadius: 30,
   },
+  containerDisabled: {
+    backgroundColor: '#e6e6ec',
+  },
   text: {
     lineHeight: 18,
     color: CLR_PINK,

@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Modal, KeyboardAvoidingView } from 'react-native'
+import { View, Modal, KeyboardAvoidingView, Platform } from 'react-native'
 import $ from './ModalBaseStyles'
 
 export default ({
@@ -17,7 +17,7 @@ export default ({
     <KeyboardAvoidingView
       behavior="padding"
       style={$.container}
-      enabled={true}
+      enabled={Platform.OS === 'ios'}
     >
       <View style={$.modal}>
         {children}

@@ -11,12 +11,15 @@ export default StyleSheet.create({
     borderRadius: 24,
   },
   containerDisabled: {
-    opacity: 0.1,
+    backgroundColor: '#e6e6ec',
   },
   label: {
     lineHeight: 48,
     color: CLR_PINK,
     fontFamily: 'WorkSans-SemiBold',
     fontSize: 16,
+  },
+  labelDisabled: {
+    color: '#fff',
   },
 })
