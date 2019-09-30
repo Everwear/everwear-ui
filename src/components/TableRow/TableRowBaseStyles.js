@@ -48,11 +48,12 @@ export default StyleSheet.create({
     borderBottomColor: CLR_DIVIDER,
     borderBottomWidth: BORDER_WIDTH,
   },
-  swipeout: {
-    backgroundColor: null,
-  },
   footer: {
     marginHorizontal: 20,
     marginBottom: 12,
+  },
+  swipeoutWrap: {
+    flex: 1,
+    backgroundColor: '#fff',
   },
 })

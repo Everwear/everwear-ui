@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, Animated } from 'react-native'
+import { RectButton } from 'react-native-gesture-handler'
 import ItemPhoto from '../ItemPhoto/ItemPhoto'
 import ComboBox from '../ComboBox/ComboBox'
 import TableRowBase from './TableRowBase'
@@ -45,13 +46,18 @@ const TableRowBagItem = ({
         </TouchableOpacity>
       }
       swipeoutOnScroll={swipeoutOnScroll}
-      swipeoutRight={[{
-        text: 'Delete',
-        type: 'delete',
-        backgroundColor: CLR_RED,
-        underlayColor: CLR_RED,
-        onPress: onDelete,
-      }]}
+      swipeoutRight={() => {
+        return (
+          <RectButton
+            style={$.delete}
+            onPress={onDelete}
+          >
+            <Text style={$.deleteText}>
+              Delete
+            </Text>
+          </RectButton>
+        )
+      }}
     >
       <View style={$.container}>
         {!available &&

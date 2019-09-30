@@ -4,6 +4,7 @@ import {
   TEXT_BASE_BOLD,
 } from '../../common/typography'
 import {
+  CLR_BLUE,
   CLR_DARK_BLUE,
 } from '../../common/vars'
 
@@ -15,5 +16,9 @@ export default StyleSheet.create({
   strong: {
     ...TEXT_BASE_BOLD,
     color: CLR_DARK_BLUE,
+  },
+  link: {
+    ...TEXT_BASE,
+    color: CLR_BLUE,
   },
 })

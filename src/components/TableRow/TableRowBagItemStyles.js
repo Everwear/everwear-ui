@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native'
 
 import {
   TEXT_BASE,
+  TEXT_BASE_BOLD,
   TEXT_FOOTNOTE,
 } from '../../common/typography'
 
@@ -10,6 +11,7 @@ import {
   CLR_DARK_BLUE,
   CLR_ORANGE,
   CLR_MANATEE,
+  CLR_RED,
 } from '../../common/vars'
 
 export default StyleSheet.create({
@@ -66,5 +68,16 @@ export default StyleSheet.create({
     paddingLeft: 8,
     color: CLR_DARK_BLUE,
     width: '50%',
+  },
+  delete: {
+    height: '100%',
+    paddingHorizontal: 20,
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+    backgroundColor: CLR_RED,
+  },
+  deleteText: {
+    ...TEXT_BASE_BOLD,
+    color: '#fff',
   },
 })

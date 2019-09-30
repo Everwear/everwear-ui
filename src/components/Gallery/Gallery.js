@@ -1,70 +1,37 @@
-import React, { useState } from 'react'
-import { ScrollView, TouchableOpacity, Modal } from 'react-native'
-import ImageGallery from 'react-native-image-gallery'
+import React from 'react'
+import { ScrollView, TouchableOpacity } from 'react-native'
 import RemoteImage from '../RemoteImage/RemoteImage'
-import Link from '../Link/Link'
 import $ from './GalleryStyles'
 
 const Gallery = ({
-  photos,
   ratio,
   style,
+  photos,
+  onPress,
 }) => {
-  const [ isFullscreen, setFullscreen ] = useState(false)
-  const [ photoIndex, setPhotoIndex ] = useState(0)
-
   return (
-    <>
-      <Modal
-        visible={isFullscreen}
-        animationType="fade"
-        transparent={true}
-        onRequestClose={() => {
-          setFullscreen(false)
-        }}
-      >
-        <Link
-          style={$.close}
+    <ScrollView
+      horizontal={true}
+      style={[$.container, style]}
+      contentContainerStyle={$.content}
+      showsHorizontalScrollIndicator={true}
+    >
+      {photos.map(({ url }, i) =>
+        <TouchableOpacity
+          key={url}
           onPress={() => {
-            setFullscreen(false)
+            onPress(i)
           }}
         >
-          Close
-        </Link>
-        <ImageGallery
-          style={$.gallery}
-          initialPage={photoIndex}
-          images={photos.map(({ url }) => ({
-            source: {
-              uri: url,
-            },
-          }))}
-        />
-      </Modal>
-      <ScrollView
-        horizontal={true}
-        style={[$.container, style]}
-        contentContainerStyle={$.content}
-        showsHorizontalScrollIndicator={true}
-      >
-        {photos.map(({ url }, i) =>
-          <TouchableOpacity
-            key={url}
-            onPress={() => {
-              setPhotoIndex(i)
-              setFullscreen(true)
+          <RemoteImage
+            source={{ uri: url }}
+            style={{
+              height: 400,
+              width: 400 * (1 / ratio),
             }}
-          >
-            <RemoteImage
-              source={{ uri: url }}
-              style={{
-                height: 400,
-                width: 400 * (1 / ratio),
-              }}
-            />
-          </TouchableOpacity>)}
-      </ScrollView>
-    </>
+          />
+        </TouchableOpacity>)}
+    </ScrollView>
   )
 }
 

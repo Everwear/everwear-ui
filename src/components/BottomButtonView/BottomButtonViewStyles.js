@@ -21,6 +21,13 @@ export default StyleSheet.create({
   button: {
     minWidth: 195,
     maxWidth: 240,
+    shadowColor: '#000',
+    shadowOpacity: 0.25,
+    shadowRadius: 16,
+    shadowOffset: {
+      height: 8,
+      width: 0,
+    },
   },
   kbaView: {
     flex: 1,

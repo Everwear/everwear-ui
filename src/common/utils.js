@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Platform, StatusBar } from 'react-native'
+import { Text, Platform } from 'react-native'
 import DeviceInfo from 'react-native-device-info'
 
 export function cn($, keys) {
@@ -13,9 +13,10 @@ export function cn($, keys) {
 }
 
 export function statusBarHeight() {
-  const statusBarHeightIos = DeviceInfo.getModel().startsWith('iPhone X') ? 44 : 20
+  const model = DeviceInfo.getModelSync()
+  const statusBarHeightIos = model.startsWith('iPhone X') || model.startsWith('iPhone 11') ? 44 : 20
   const statusBarHeight = Platform.OS === 'ios' ?
-    statusBarHeightIos : 0 // StatusBar.currentHeight
+    statusBarHeightIos : 0
   return statusBarHeight
 }
 

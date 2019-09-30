@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Swipeout from 'react-native-swipeout'
+import Swipeable from 'react-native-gesture-handler/Swipeable'
 import { View, Image, TouchableHighlight, Animated } from 'react-native'
 import RemoteImage from '../RemoteImage/RemoteImage'
 import { cn } from '../../common/utils'
@@ -19,17 +19,13 @@ const TableRowBase = ({
   noBottomSep,
   fullWidthSep,
   swipeoutRight,
-  swipeoutOnScroll,
   footerView,
   onPress,
   children,
   testID,
 }) => {
   const content = (
-    <SwipeoutWrap
-      swipeoutRight={swipeoutRight}
-      swipeoutOnScroll={swipeoutOnScroll}
-    >
+    <SwipeoutWrap swipeoutRight={swipeoutRight}>
       <View
         style={cn($, {
           'content': true,
@@ -168,19 +164,15 @@ const Fade = ({
 
 const SwipeoutWrap = ({
   swipeoutRight,
-  swipeoutOnScroll,
   children,
 }) => {
   if (swipeoutRight) {
     return (
-      <Swipeout
-        autoClose={true}
-        style={$.swipeout}
-        right={swipeoutRight}
-        scroll={swipeoutOnScroll}
-      >
-        {children}
-      </Swipeout>
+      <Swipeable renderRightActions={swipeoutRight}>
+        <View style={$.swipeoutWrap}>
+          {children}
+        </View>
+      </Swipeable>
     )
   }
   return children
