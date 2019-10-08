@@ -8,18 +8,29 @@ const TableRowCheckbox = ({
   checked,
   disabled,
   onPress,
+  value,
   style,
   ...props
-}) => (
-  <TableRow
-    {...props}
-    fullWidthSep={true}
-    image={checked ? IMAGE_ON : IMAGE_OFF}
-    onPress={disabled ? null : onPress}
-    style={[disabled && {
-      opacity: 0.3,
-    }, style]}
-  />
-)
+}) => {
+  let cb = onPress
 
-export default TableRowCheckbox
+  if (typeof(value) !== 'undefined') {
+    cb = () => {
+      onPress(value)
+    }
+  }
+
+  return (
+    <TableRow
+      {...props}
+      fullWidthSep={true}
+      image={checked ? IMAGE_ON : IMAGE_OFF}
+      onPress={disabled ? null : cb}
+      style={[disabled && {
+        opacity: 0.3,
+      }, style]}
+    />
+  )
+}
+
+export default React.memo(TableRowCheckbox)

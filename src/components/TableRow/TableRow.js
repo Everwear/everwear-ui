@@ -6,6 +6,7 @@ import $ from './TableRowStyles'
 const TableRow = ({
   text,
   textStyle,
+  textNumberOfLines,
   textValue,
   textValueStyle,
   textLabel,
@@ -36,6 +37,7 @@ const TableRow = ({
         <View style={$.row}>
           <Text
             style={[$.text, textStyle]}
+            numberOfLines={textNumberOfLines}
             testID={testIDText}
           >
             {text}

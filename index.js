@@ -59,6 +59,9 @@ import Checkbox from './src/components/Checkbox/Checkbox'
 import Markdown from './src/components/Markdown/Markdown'
 import CardImageLeft from './src/components/CardImageLeft/CardImageLeft'
 import ActivityView from './src/components/ActivityView/ActivityView'
+import ActivityModal from './src/components/ActivityModal/ActivityModal'
+import SkeletonView from './src/components/SkeletonView/SkeletonView'
+import Toggles from './src/components/Toggles/Toggles'
 
 import Alert from './src/hoc/Alert/Alert'
 import { AlertProvider } from './src/hoc/Alert/AlertProvider'
@@ -130,6 +133,9 @@ module.exports = extend({
   Markdown,
   CardImageLeft,
   ActivityView,
+  ActivityModal,
+  SkeletonView,
+  Toggles,
 
   HOC: {
     Alert,
