@@ -1,6 +1,7 @@
 import VMasker from 'vanilla-masker'
 import React, { Component } from 'react'
 import { TextInput, View, Text } from 'react-native'
+import TextField from '../TextField/TextField'
 import { CLR_MANATEE } from '../../common/vars'
 import { cn } from '../../common/utils'
 import $ from './CreditCardFieldStyles'
@@ -23,12 +24,15 @@ class CreditCardField extends Component {
       valueNumber,
       valueExpiry,
       valueCVV,
+      valueZip,
       onChangeNumber,
       onChangeExpiry,
       onChangeCVV,
+      onChangeZip,
       testIDNumber,
       testIDExpiry,
       testIDCVV,
+      testIDZip,
     } = this.props
 
     const {
@@ -77,6 +81,7 @@ class CreditCardField extends Component {
             style={$.expiry}
             value={valueExpiry}
             keyboardType="numeric"
+            placeholderTextColor={CLR_MANATEE}
             placeholder="MM/YY"
             maxLength={5}
             testID={testIDExpiry}
@@ -96,6 +101,7 @@ class CreditCardField extends Component {
             style={$.cvv}
             value={valueCVV}
             keyboardType="numeric"
+            placeholderTextColor={CLR_MANATEE}
             placeholder="CVV"
             maxLength={4}
             testID={testIDCVV}
@@ -109,6 +115,15 @@ class CreditCardField extends Component {
             }}
           />
         </View>
+        <TextField
+          value={valueZip}
+          keyboardType="numeric"
+          placeholder="Zip code"
+          testID={testIDZip}
+          onChangeText={(valueZip) => {
+            onChangeZip(valueZip)
+          }}
+        />
         {hint &&
           <Text style={$.hint}>
             {hint}

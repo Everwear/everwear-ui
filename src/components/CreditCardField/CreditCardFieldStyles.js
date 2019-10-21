@@ -37,6 +37,12 @@ export default StyleSheet.create({
     fontFamily: 'WorkSans-Regular',
     color: CLR_DARK_BLUE,
   },
+  zip: {
+    height: 43,
+    fontSize: 16,
+    fontFamily: 'WorkSans-Regular',
+    color: CLR_DARK_BLUE,
+  },
   hint: {
     ...TEXT_FOOTNOTE,
     marginTop: 8,
