@@ -1,40 +1,30 @@
-import React, { Component } from 'react'
-import { View, Animated } from 'react-native'
-import $ from './RemoteImageStyles'
+import React, { useState } from 'react'
+import { Image } from 'react-native'
 
-class RemoteImage extends Component {
-  constructor() {
-    super()
-    this.onLoad = this.onLoad.bind(this)
-    this.state = {
-      opacity: new Animated.Value(0),
-    }
+const RemoteImage = ({
+  uri,
+  ...props
+}) => {
+  const [ loadAttempt, setLoadAttempt ] = useState(1)
+  const [ URI, setURI ] = useState(uri)
+
+  const onError = () => {
+    setTimeout(() => {
+      setURI(`${uri}#${Date.now()}`)
+      setLoadAttempt(loadAttempt+1)
+    }, 1000 * loadAttempt)
   }
 
-  onLoad() {
-    const { opacity } = this.state
-    Animated.timing(opacity, {
-      duration: 300,
-      toValue: 1,
-    }).start()
-  }
-
-  render() {
-    const { opacity } = this.state
-    const { style, ...props } = this.props
-
-    return (
-      <View style={[$.container, style]}>
-        <Animated.Image
-          {...props}
-          onLoad={this.onLoad}
-          style={[$.image, {
-            opacity,
-          }]}
-        />
-      </View>
-    )
-  }
+  return (
+    <Image
+      {...props}
+      source={{
+        uri: URI,
+        // cache: 'force-cache',
+      }}
+      onError={onError}
+    />
+  )
 }
 
 export default RemoteImage
