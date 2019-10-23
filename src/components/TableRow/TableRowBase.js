@@ -43,7 +43,7 @@ const TableRowBase = ({
         {imageIsLoading || image && !!image.uri &&
           <RemoteImage
             style={[$.image, imageStyle]}
-            source={image}
+            uri={image.uri}
           />}
         {imageView &&
           <View style={[$.imageView, imageViewStyle]}>

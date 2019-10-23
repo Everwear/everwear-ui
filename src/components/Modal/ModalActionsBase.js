@@ -16,7 +16,7 @@ export default ({
     <View testID={testID} style={$.content}>
       {image &&
         <RemoteImage
-          source={image}
+          uri={image.uri}
           style={$.image}
         />}
       <Text testID={testIDText} style={$.text}>

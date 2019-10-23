@@ -8,7 +8,6 @@ import TableRowBase from './src/components/TableRow/TableRowBase'
 import TableRowBagItem from './src/components/TableRow/TableRowBagItem'
 import TableRowOrderItem from './src/components/TableRow/TableRowOrderItem'
 import TableRowArrow from './src/components/TableRow/TableRowArrow'
-import TableRowStore from './src/components/TableRow/TableRowStore'
 import TableRowOperation from './src/components/TableRow/TableRowOperation'
 import TableRowGroup from './src/components/TableRow/TableRowGroup'
 import TableRowCheckbox from './src/components/TableRow/TableRowCheckbox'
@@ -22,7 +21,6 @@ import TextSecondary from './src/components/Text/TextSecondary'
 import TextBase from './src/components/Text/TextBase'
 import TextBaseCenter from './src/components/Text/TextBaseCenter'
 import RemoteImage from './src/components/RemoteImage/RemoteImage'
-import StoreLogo from './src/components/StoreLogo/StoreLogo'
 import Seporator from './src/components/Seporator/Seporator'
 import BottomButtonView from './src/components/BottomButtonView/BottomButtonView'
 import TopImageView from './src/components/TopImageView/TopImageView'
@@ -84,7 +82,6 @@ module.exports = extend({
   TableRowBagItem,
   TableRowOrderItem,
   TableRowArrow,
-  TableRowStore,
   TableRowOperation,
   TableRowGroup,
   TableRowCheckbox,
@@ -98,7 +95,6 @@ module.exports = extend({
   TextBase,
   TextBaseCenter,
   RemoteImage,
-  StoreLogo,
   SpinnerView,
   Seporator,
   ModalBase,

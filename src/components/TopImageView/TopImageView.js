@@ -18,7 +18,7 @@ export default ({
     img = (
       <RemoteImage
         style={[$.image, imageStyle]}
-        source={image}
+        uri={image.uri}
       />
     )
   } else {

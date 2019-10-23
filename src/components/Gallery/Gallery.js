@@ -24,7 +24,7 @@ const Gallery = ({
           }}
         >
           <RemoteImage
-            source={{ uri: url }}
+            uri={url}
             style={{
               height: 400,
               width: 400 * (1 / ratio),
