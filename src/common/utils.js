@@ -13,8 +13,8 @@ export function cn($, keys) {
 }
 
 export function statusBarHeight() {
-  const model = 'iPhone X'
-  // const model = DeviceInfo.getModelSync()
+  // const model = 'iPhone X'
+  const model = DeviceInfo.getModelSync()
   const statusBarHeightIos = model.startsWith('iPhone X') || model.startsWith('iPhone 11') ? 44 : 20
   const statusBarHeight = Platform.OS === 'ios' ?
     statusBarHeightIos : 0
