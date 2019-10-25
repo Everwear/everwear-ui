@@ -26,10 +26,7 @@ const ItemCard = ({
       <ItemPhoto
         style={$.image}
         ratio={ratio}
-        source={{
-          uri: photo,
-          cache: 'force-cache',
-        }}
+        uri={photo}
       />
       <View>
         <Text style={$.title} numberOfLines={1}>{name}</Text>

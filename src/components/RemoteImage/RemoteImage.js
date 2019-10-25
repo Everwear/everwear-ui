@@ -20,7 +20,7 @@ const RemoteImage = ({
       {...props}
       source={{
         uri: URI,
-        // cache: 'force-cache',
+        cache: 'force-cache',
       }}
       onError={onError}
     />

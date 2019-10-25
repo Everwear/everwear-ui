@@ -3,7 +3,7 @@ import { Animated } from 'react-native'
 import $ from './SkeletonViewStyles'
 
 const DURATION = 400
-const VALUE_START = 0.3
+const VALUE_START = 0.2
 const VALUE_END = 1
 
 const SkeletonView = ({

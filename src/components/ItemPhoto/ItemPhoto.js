@@ -1,119 +1,54 @@
-// import React, { Component } from 'react'
-// import { View, Animated, Image } from 'react-native'
-// import $, {
-//   CONTAINER_WIDTH,
-//   CONTAINER_HEIGHT,
-// } from './ItemPhotoStyles'
-
-// class ItemPhoto extends Component {
-//   constructor(props) {
-//     super(props)
-//     this.onLoad = this.onLoad.bind(this)
-//     this.state = {
-//       opacity: new Animated.Value(0),
-//       height: props.height || CONTAINER_HEIGHT,
-//       width: props.width || CONTAINER_WIDTH,
-//     }
-//   }
-
-//   onLoad() {
-//     const { source } = this.props
-//     const { opacity, width, height } = this.state
-
-//     Image.getSize(source.uri, async (w, h) => {
-//       let newHeight = width * (h / w)
-//       let newWidth = width
-
-//       if (newHeight < height) {
-//         newWidth += (height - newHeight) * (w / h)
-//         newHeight = height
-//       }
-
-//       this.setState({
-//         height: newHeight,
-//         width: newWidth,
-//       })
-
-//       Animated.timing(opacity, {
-//         duration: 300,
-//         toValue: 1,
-//       }).start()
-//     })
-//   }
-
-//   render() {
-//     const { style, ...props } = this.props
-//     const { opacity, height, width } = this.state
-
-//     return (
-//       <View
-//         style={[$.container, style, {
-//           width: props.width || CONTAINER_WIDTH,
-//           height: props.height || CONTAINER_HEIGHT,
-//         }]}
-//       >
-//         <Animated.Image
-//           {...props}
-//           onLoad={this.onLoad}
-//           style={[$.image, {
-//             opacity,
-//             height,
-//             width,
-//           }]}
-//         />
-//         <Animated.View
-//           style={[$.overlay, {
-//             opacity,
-//           }]}
-//         />
-//       </View>
-//     )
-//   }
-// }
-
-// export default ItemPhoto
-
-import React, { Component } from 'react'
-import { View, Image } from 'react-native'
+import React, { useState } from 'react'
+import { View } from 'react-native'
+import RemoteImage from '../RemoteImage/RemoteImage'
+import SkeletonView from '../SkeletonView/SkeletonView'
 import $, {
   CONTAINER_WIDTH,
   CONTAINER_HEIGHT,
 } from './ItemPhotoStyles'
 
-class ItemPhoto extends Component {
-  render() {
-    const { style, ratio, ...props } = this.props
-    const conHeight = props.height || CONTAINER_HEIGHT
+const ItemPhoto = ({
+  style,
+  ratio,
+  height,
+  width,
+  ...props
+}) => {
+  const [ isLoaded, setIsLoaded ] = useState(false)
+  const conHeight = height || CONTAINER_HEIGHT
 
-    let imgWidth = props.width || CONTAINER_WIDTH
-    let imgHeight = imgWidth * ratio
+  let imgWidth = width || CONTAINER_WIDTH
+  let imgHeight = imgWidth * ratio
 
-    if (imgHeight < conHeight) {
-      imgHeight = conHeight
-      imgWidth += (conHeight - imgHeight) / ratio
-    }
-
-    return (
-      <View
-        style={[$.container, style, {
-          width: props.width || CONTAINER_WIDTH,
-          height: props.height || CONTAINER_HEIGHT,
-        }]}
-      >
-        <Image
-          {...props}
-          onLoad={this.onLoad}
-          style={[$.image, {
-            height: imgHeight,
-            width: imgWidth,
-          }]}
-        />
-        <View
-          style={$.overlay}
-        />
-      </View>
-    )
+  if (imgHeight < conHeight) {
+    imgHeight = conHeight
+    imgWidth += (conHeight - imgHeight) / ratio
   }
+
+  return (
+    <View
+      style={[$.container, style, {
+        width: width || CONTAINER_WIDTH,
+        height: height || CONTAINER_HEIGHT,
+      }]}
+    >
+      <RemoteImage
+        {...props}
+        resizeMethod="scale"
+        style={[$.image, {
+          height: imgHeight,
+          width: imgWidth,
+        }]}
+        onLoad={() => {
+          setIsLoaded(true)
+        }}
+      />
+      {isLoaded &&
+        <View style={$.overlay}/>}
+      {isLoaded ||
+        <SkeletonView style={$.skeleton}/>}
+    </View>
+  )
 }
 
 export default ItemPhoto

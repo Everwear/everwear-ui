@@ -39,9 +39,7 @@ const TableRowBagItem = ({
             height={128}
             ratio={ratio}
             style={$.image}
-            source={{
-              uri: photo,
-            }}
+            uri={photo}
           />
         </TouchableOpacity>
       }

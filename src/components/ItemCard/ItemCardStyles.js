@@ -2,7 +2,6 @@ import { Dimensions, StyleSheet } from 'react-native'
 import { TEXT_FOOTNOTE } from '../../common/typography'
 import {
   CLR_DARK_BLUE,
-  CLR_WHISPER,
   CLR_ORANGE,
   CLR_MANATEE,
 } from '../../common/vars'
@@ -19,7 +18,6 @@ export default StyleSheet.create({
   image: {
     marginBottom: 12,
     borderRadius: 8,
-    backgroundColor: CLR_WHISPER,
   },
   title: {
     ...TEXT_FOOTNOTE,

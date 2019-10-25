@@ -35,9 +35,7 @@ const TableRowOrderItem = ({
             width={100}
             height={128}
             ratio={ratio}
-            source={{
-              uri: photo,
-            }}
+            uri={photo}
           />
         </View>
       }
@@ -46,9 +44,7 @@ const TableRowOrderItem = ({
           {otherItems.map((item) =>
             <ItemPhoto
               key={item.id}
-              source={{
-                uri: item.uri,
-              }}
+              uri={item.uri}
               style={cn($, {
                 'otherItem': true,
                 'otherItemUnavailable': !item.available,
