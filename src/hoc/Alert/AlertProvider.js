@@ -31,6 +31,7 @@ class AlertProvider extends Component {
             this.dropdown = ref
           }}
           testID="alert"
+          inactiveStatusBarStyle="dark-content"
           infoImageSrc={null}
           warnImageSrc={null}
           errorImageSrc={null}
